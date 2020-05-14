@@ -21,7 +21,6 @@ struct Card: View {
         .padding(.all, 30.0)
         .frame(minWidth: 0, maxWidth: .infinity)
         .background(Image(self.header))
-        .opacity(0.8)
         .cornerRadius(12.5)
     }
 }
