@@ -6,14 +6,16 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $tab) {
             HomeView().tabItem {
-                Image(systemName: "house")
-                Text("Home")
+                Image(systemName: "house").font(.system(size: 22))
             }.tag(1)
             
-            SettingsView().tabItem {
-                Image(systemName: "gear")
-                Text("Settings")
+            FavoritesView().tabItem {
+                Image(systemName: "star").font(.system(size: 22))
             }.tag(2)
+            
+            SettingsView().tabItem {
+                Image(systemName: "gear").font(.system(size: 22))
+            }.tag(3)
         }
     }
 }

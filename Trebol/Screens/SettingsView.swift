@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("Settings view")
+        Title(title: "Settings")
     }
 }
 
