@@ -3,25 +3,43 @@ import SwiftUI
 struct Card: View {
     @Binding public var favorited: Bool
     
-    public var kind: String
+    public var family: String
+    public var scientificName: String
     public var name: String
     public var header: String
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(self.kind)
-                .font(.headline)
-                .foregroundColor(Color.white)
-            Text(self.name)
-                .font(.title)
-                .fontWeight(.black)
-                .foregroundColor(Color.white)
-                .lineLimit(3)
+        GeometryReader { geometry in
+            VStack(alignment: .leading) {
+                Image(self.header)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geometry.size.width, height: geometry.size.height * 0.27) // 3
+                    .clipped()
+                
+                HStack {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(self.name)
+                            .font(.title)
+                            .bold()
+                        Text(self.scientificName)
+                            .font(.subheadline)
+                            .bold()
+                        Text(self.family)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
+                    Spacer()
+                    Image(systemName: "tray.and.arrow.down")
+                        .foregroundColor(.gray)
+                }
+                .padding(.horizontal)
+            }
+            .padding(.bottom)
+            .background(Color.white)
+            .cornerRadius(10)
+            .shadow(radius: 5)
         }
-        .padding(.all, 30.0)
-        .frame(minWidth: 0, maxWidth: .infinity)
-        .background(Image(self.header))
-        .cornerRadius(12.5)
     }
 }
 
@@ -34,11 +52,7 @@ struct Card_Previews: PreviewProvider {
       @State private var favorited = false
 
       var body: some View {
-        VStack(spacing: 20) {
-            Card(favorited: $favorited, kind: "Tree", name: "Apple tree with leaves", header: "plant")
-            Card(favorited: $favorited, kind: "Tree", name: "Mango tree", header: "plant")
-            Card(favorited: $favorited, kind: "Eating plant", name: "Fly eater", header: "plant")
-        }
+        Card(favorited: $favorited, family: "Tree", scientificName: "Kalolaw minoqie", name: "Apple tree with leaves", header: "plant")
       }
     }
 }

@@ -1,8 +1,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var favorited = false
+    
     var body: some View {
-        Title(title: "Home")
+        VStack {
+            Title(title: "Home")
+            Card(favorited: $favorited, family: "Tree", scientificName: "Kalolaw minoqie", name: "Apple tree with leaves", header: "plant")
+            Spacer()
+        }
     }
 }
 

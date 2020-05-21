@@ -20,7 +20,6 @@ struct Title: View {
                 Spacer()
             }
             .padding()
-            Spacer()
         }
     }
 }

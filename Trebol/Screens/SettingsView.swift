@@ -1,8 +1,16 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State private var darkMode = true
+    
     var body: some View {
-        Title(title: "Settings")
+        VStack {
+            Title(title: "Settings")
+            Toggle(isOn: $darkMode) {
+                Text("Darkmode")
+            }.padding()
+            Spacer()
+        }
     }
 }
 

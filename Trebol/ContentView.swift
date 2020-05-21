@@ -9,8 +9,8 @@ struct ContentView: View {
                 Image(systemName: "house").font(.system(size: 22))
             }.tag(1)
             
-            FavoritesView().tabItem {
-                Image(systemName: "star").font(.system(size: 22))
+            CollectionView().tabItem {
+                Image(systemName: "tray.full").font(.system(size: 22))
             }.tag(2)
             
             SettingsView().tabItem {
