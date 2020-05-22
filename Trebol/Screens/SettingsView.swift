@@ -8,9 +8,12 @@ struct SettingsView: View {
         VStack {
             Title(title: "Settings")
             
-            VStack {
+            List {
                 Toggle(isOn: $darkMode) {
-                    Text("Enable darkmode")
+                    Image(systemName: "moon")
+                    
+                    Text("Dark mode")
+                        .bold()
                 }
                 .padding()
             }
