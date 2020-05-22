@@ -4,6 +4,7 @@ struct CollectionView: View {
     var body: some View {
         VStack {
             Title(title: "Plant collection")
+            
             Spacer()
         }
     }

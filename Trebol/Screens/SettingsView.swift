@@ -1,14 +1,24 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var darkMode = true
+    @State private var darkMode = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack {
             Title(title: "Settings")
-            Toggle(isOn: $darkMode) {
-                Text("Darkmode")
-            }.padding()
+            
+            VStack {
+                Toggle(isOn: $darkMode) {
+                    Text("Enable darkmode")
+                }
+                .padding()
+            }
+            .background(self.colorScheme == .dark ? Color(UIColor.systemGray6) : Color.white)
+            .cornerRadius(10)
+            .shadow(radius: 5)
+            .padding(.horizontal)
+            
             Spacer()
         }
     }

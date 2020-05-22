@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct Card: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding public var favorited: Bool
     
     public var family: String
@@ -14,7 +15,7 @@ struct Card: View {
                 Image(self.header)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.27) // 3
+                    .frame(width: geometry.size.width, height: 190)
                     .clipped()
                 
                 HStack {
@@ -22,24 +23,31 @@ struct Card: View {
                         Text(self.name)
                             .font(.title)
                             .bold()
+                            .lineLimit(1)
                         Text(self.scientificName)
                             .font(.subheadline)
                             .bold()
+                            .lineLimit(1)
                         Text(self.family)
                             .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color(UIColor.systemGray))
+                            .lineLimit(1)
                     }
+                    
                     Spacer()
+                    
                     Image(systemName: "tray.and.arrow.down")
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(UIColor.systemGray))
                 }
                 .padding(.horizontal)
             }
             .padding(.bottom)
-            .background(Color.white)
+            .background(self.colorScheme == .dark ? Color(UIColor.systemGray6) : Color.white)
             .cornerRadius(10)
             .shadow(radius: 5)
         }
+        .padding(.horizontal)
+        .padding(.vertical)
     }
 }
 
