@@ -19,7 +19,8 @@ struct Title: View {
                     .fontWeight(.bold)
                 Spacer()
             }
-            .padding()
+            .padding(.top)
+            .padding(.horizontal)
         }
     }
 }

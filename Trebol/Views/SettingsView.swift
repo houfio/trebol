@@ -1,25 +1,26 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var darkMode = false
     @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var viewModel: SettingsViewModel
+    
+    init() {
+        self.viewModel = SettingsViewModel()
+    }
     
     var body: some View {
         VStack {
             Title(title: "Settings")
             
-            List {
-                Toggle(isOn: $darkMode) {
-                    Image(systemName: "moon")
-                    
-                    Text("Dark mode")
-                        .bold()
-                }
-                .padding()
+            Toggle(isOn: $viewModel.darkMode) {
+                Image(systemName: "moon")
+                
+                Text("Dark mode")
+                    .bold()
             }
+            .padding()
             .background(self.colorScheme == .dark ? Color(UIColor.systemGray6) : Color.white)
             .cornerRadius(10)
-            .shadow(radius: 5)
             .padding(.horizontal)
             
             Spacer()

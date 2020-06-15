@@ -44,7 +44,6 @@ struct Card: View {
             .padding(.bottom)
             .background(self.colorScheme == .dark ? Color(UIColor.systemGray6) : Color.white)
             .cornerRadius(10)
-            .shadow(radius: 5)
         }
         .padding(.horizontal)
         .padding(.vertical)
