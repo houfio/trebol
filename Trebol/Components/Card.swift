@@ -56,10 +56,10 @@ struct Card_Previews: PreviewProvider {
     }
     
     struct PreviewWrapper: View {
-      @State private var favorited = false
+        @State private var favorited = false
 
-      var body: some View {
-        Card(favorited: $favorited, family: "Tree", scientificName: "Kalolaw minoqie", name: "Apple tree with leaves", header: "plant")
-      }
+        var body: some View {
+                Card(favorited: $favorited, family: "Tree", scientificName: "Kalolaw minoqie", name: "Apple tree with leaves", header: "plant")
+            }
+        }
     }
-}

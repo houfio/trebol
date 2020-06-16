@@ -2,11 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.colorScheme) var colorScheme
-    @ObservedObject var viewModel: SettingsViewModel
-    
-    init() {
-        self.viewModel = SettingsViewModel()
-    }
+    @ObservedObject private var viewModel = SettingsViewModel()
     
     var body: some View {
         VStack {
