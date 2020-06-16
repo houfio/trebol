@@ -22,8 +22,14 @@ struct Tab<Content: View>: View {
 
 struct Tab_Previews: PreviewProvider {
     static var previews: some View {
-        Tab(icon: "house", tag: 1) {
-            HomeView()
+        TabView() {
+            Tab(icon: "house", tag: 1) {
+                HomeView()
+            }
+            
+            Tab(icon: "trash", tag: 2) {
+                HomeView()
+           }
         }
     }
 }
