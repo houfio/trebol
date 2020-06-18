@@ -18,6 +18,7 @@
 		3B944D28246D6BEE004FCDFF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B944D27246D6BEE004FCDFF /* HomeView.swift */; };
 		3B944D2A246D6C44004FCDFF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B944D29246D6C44004FCDFF /* SettingsView.swift */; };
 		3B944D2D246D74CF004FCDFF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B944D2C246D74CF004FCDFF /* Card.swift */; };
+		D739CA77249B87470091B722 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D739CA76249B87470091B722 /* .gitignore */; };
 		D778FA762445EFA100DD1D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FA752445EFA100DD1D3F /* AppDelegate.swift */; };
 		D778FA782445EFA100DD1D3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FA772445EFA100DD1D3F /* SceneDelegate.swift */; };
 		D778FA7A2445EFA100DD1D3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FA792445EFA100DD1D3F /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 		3B944D27246D6BEE004FCDFF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3B944D29246D6C44004FCDFF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3B944D2C246D74CF004FCDFF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		D739CA76249B87470091B722 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D778FA722445EFA100DD1D3F /* Trebol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trebol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D778FA752445EFA100DD1D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D778FA772445EFA100DD1D3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		D778FA692445EFA100DD1D3F = {
 			isa = PBXGroup;
 			children = (
+				D739CA76249B87470091B722 /* .gitignore */,
 				D778FA742445EFA100DD1D3F /* Trebol */,
 				D778FA732445EFA100DD1D3F /* Products */,
 			);
@@ -206,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D739CA77249B87470091B722 /* .gitignore in Resources */,
 				D778FA822445EFA200DD1D3F /* LaunchScreen.storyboard in Resources */,
 				D778FA7F2445EFA200DD1D3F /* Preview Assets.xcassets in Resources */,
 				D778FA7C2445EFA200DD1D3F /* Assets.xcassets in Resources */,
