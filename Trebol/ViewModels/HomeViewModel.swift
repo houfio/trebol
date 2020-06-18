@@ -4,7 +4,9 @@ class HomeViewModel: ObservableObject, Identifiable {
     @Published public var plants: [Plant] = []
     
     init() {
-        self.getPlants()
+        Fetch().get(route: "plants") { (json: [Plant]) in
+            self.plants = json
+        }
     }
     
     public func getRandomPlants(amount: Int = 5, max: Int = 200) -> Void {
@@ -17,16 +19,6 @@ class HomeViewModel: ObservableObject, Identifiable {
         }
         
         self.plants = objects
-    }
-    
-    private func getPlants() -> Void {
-        var plants: [Plant] = []
-        
-        Fetch().get(route: "plants") { (json: [Plant]) in
-             plants = json
-        }
-        
-        self.plants = plants
     }
 }
 

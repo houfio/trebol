@@ -11,7 +11,7 @@ struct HomeView: View {
             ScrollView {
                 VStack {
                     ForEach(self.viewModel.plants, id: \.id) { plant in
-                        Card(favorited: self.$favorited, family: plant.slug, scientificName: plant.scientificName, name: plant.commonName, header: "plant")
+                        Card(favorited: self.$favorited, family: plant.slug, scientificName: plant.scientificName, name: "Common", header: "plant")
                     }
                 }
             }
