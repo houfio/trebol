@@ -36,9 +36,9 @@ struct Card: View {
                 Spacer()
                 
                 Button(action: {
-                    self.collection.add(self.plant)
+                    self.collection.contains(self.plant) ? self.collection.remove(self.plant) : self.collection.add(self.plant)
                 }) {
-                    Image(systemName: "tray.and.arrow.down")
+                    Image(systemName: self.collection.contains(self.plant) ? "tray.and.arrow.up" : "tray.and.arrow.down")
                         .foregroundColor(Color(UIColor.systemGray))
                 }
             }

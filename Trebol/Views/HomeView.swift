@@ -8,10 +8,8 @@ struct HomeView: View {
             Title(title: "Home")
 
             ScrollView {
-                VStack {
-                    ForEach(self.viewModel.plants, id: \.id) { plant in
-                        Card(plant: plant)
-                    }
+                ForEach(self.viewModel.plants, id: \.id) { plant in
+                    Card(plant: plant)
                 }
             }
         }

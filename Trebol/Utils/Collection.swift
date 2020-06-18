@@ -6,7 +6,14 @@ class Collection: ObservableObject {
     private let saveKey = "collection"
     
     init() {
-        self.plants = UserDefaults.standard.object(forKey: self.saveKey) as? [Plant] ?? [Plant]()
+        if let data = UserDefaults.standard.data(forKey: self.saveKey) {
+            if let decoded = try? JSONDecoder().decode([Plant].self, from: data) {
+                self.plants = decoded
+                return
+            }
+        }
+        
+        self.plants = []
     }
     
     public func getPlants() -> [Plant] {
@@ -32,6 +39,8 @@ class Collection: ObservableObject {
     }
 
     public func save() {
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(self.plants), forKey: self.saveKey)
+        if let encoded = try? JSONEncoder().encode(self.plants) {
+            UserDefaults.standard.set(encoded, forKey: self.saveKey)
+        }
     }
 }

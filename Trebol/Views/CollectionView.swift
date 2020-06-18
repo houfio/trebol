@@ -7,8 +7,10 @@ struct CollectionView: View {
         VStack {
             Title(title: "Plant collection")
             
-            ForEach(self.collection.getPlants(), id: \.id) { plant in
-                Text("\(plant.id)")
+            ScrollView {
+                ForEach(self.collection.getPlants(), id: \.id) { plant in
+                    Card(plant: plant)
+                }
             }
             
             Spacer()
