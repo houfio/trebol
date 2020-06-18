@@ -10,43 +10,40 @@ struct Card: View {
     public var header: String
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .leading) {
-                Image(self.header)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: geometry.size.width, height: 190)
-                    .clipped()
-                
-                HStack {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text(self.name)
-                            .font(.title)
-                            .bold()
-                            .lineLimit(1)
-                        Text(self.scientificName)
-                            .font(.subheadline)
-                            .bold()
-                            .lineLimit(1)
-                        Text(self.family)
-                            .font(.subheadline)
-                            .foregroundColor(Color(UIColor.systemGray))
-                            .lineLimit(1)
-                    }
-                    
-                    Spacer()
-                    
-                    Image(systemName: "tray.and.arrow.down")
+        VStack(alignment: .leading) {
+            Image(self.header)
+                .resizable()
+                .scaledToFill()
+                .frame(height: 190)
+                .clipped()
+            
+            HStack {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(self.name)
+                        .font(.title)
+                        .bold()
+                        .lineLimit(1)
+                    Text(self.scientificName)
+                        .font(.subheadline)
+                        .bold()
+                        .lineLimit(1)
+                    Text(self.family)
+                        .font(.subheadline)
                         .foregroundColor(Color(UIColor.systemGray))
+                        .lineLimit(1)
                 }
-                .padding(.horizontal)
+                
+                Spacer()
+                
+                Image(systemName: "tray.and.arrow.down")
+                    .foregroundColor(Color(UIColor.systemGray))
             }
-            .padding(.bottom)
-            .background(self.colorScheme == .dark ? Color(UIColor.systemGray6) : Color.white)
-            .cornerRadius(10)
+            .padding(.horizontal)
         }
-        .padding(.horizontal)
-        .padding(.vertical)
+        .padding(.bottom)
+        .background(self.colorScheme == .dark ? Color(UIColor.systemGray6) : Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 8.0)
     }
 }
 
@@ -59,7 +56,7 @@ struct Card_Previews: PreviewProvider {
         @State private var favorited = false
 
         var body: some View {
-                Card(favorited: $favorited, family: "Tree", scientificName: "Kalolaw minoqie", name: "Apple tree with leaves", header: "plant")
-            }
+            Card(favorited: $favorited, family: "Tree", scientificName: "Kalolaw minoqie", name: "Apple tree with leaves", header: "plant")
         }
     }
+}

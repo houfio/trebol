@@ -29,7 +29,7 @@ struct Tab_Previews: PreviewProvider {
             
             Tab(icon: "trash", tag: 2) {
                 HomeView()
-           }
+            }
         }
     }
 }

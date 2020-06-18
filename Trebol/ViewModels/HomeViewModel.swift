@@ -5,7 +5,7 @@ class HomeViewModel: ObservableObject, Identifiable {
     @Published public var plants: [Plant] = []
     
     init() {
-        Fetch().get(route: "plants") { (json: [Plant]) in
+        Fetch.get(route: "plants") { (json: [Plant]) in
             self.plants = json
         }
     }
@@ -14,7 +14,7 @@ class HomeViewModel: ObservableObject, Identifiable {
         var objects: [Plant] = []
         
         for plant in (1...amount).map({_ in Int.random(in: 1...max)}) {
-            Fetch().get(route: "plants/\(plant)") { (json: Plant) in
+            Fetch.get(route: "plants/\(plant)") { (json: Plant) in
                 objects.append(json)
             }
         }
@@ -22,4 +22,3 @@ class HomeViewModel: ObservableObject, Identifiable {
         self.plants = objects
     }
 }
-
