@@ -11,7 +11,7 @@ struct Tab<Content: View>: View {
         ZStack {
             Color(self.colorScheme == .dark ? UIColor.black : UIColor.systemGray6)
                 .edgesIgnoringSafeArea(.all)
-        
+    
             self.viewBuilder()
         }.tabItem {
             Image(systemName: self.icon)

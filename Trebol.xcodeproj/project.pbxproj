@@ -20,6 +20,9 @@
 		3B944D2D246D74CF004FCDFF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B944D2C246D74CF004FCDFF /* Card.swift */; };
 		3BF9D632249BAA4600B9618B /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3BF9D631249BAA4600B9618B /* URLImage */; };
 		3BF9D634249BB43100B9618B /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF9D633249BB43100B9618B /* Collection.swift */; };
+		3BF9D636249BDE4100B9618B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF9D635249BDE4100B9618B /* SearchView.swift */; };
+		3BF9D638249BDEA400B9618B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF9D637249BDEA400B9618B /* SearchBar.swift */; };
+		3BF9D63A249BE6BC00B9618B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF9D639249BE6BC00B9618B /* SearchViewModel.swift */; };
 		D739CA77249B87470091B722 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D739CA76249B87470091B722 /* .gitignore */; };
 		D778FA762445EFA100DD1D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FA752445EFA100DD1D3F /* AppDelegate.swift */; };
 		D778FA782445EFA100DD1D3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778FA772445EFA100DD1D3F /* SceneDelegate.swift */; };
@@ -42,6 +45,9 @@
 		3B944D29246D6C44004FCDFF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3B944D2C246D74CF004FCDFF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3BF9D633249BB43100B9618B /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		3BF9D635249BDE4100B9618B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		3BF9D637249BDEA400B9618B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		3BF9D639249BE6BC00B9618B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		D739CA76249B87470091B722 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D778FA722445EFA100DD1D3F /* Trebol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trebol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D778FA752445EFA100DD1D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 			children = (
 				3B00EEA62497E9400054081F /* SettingsViewModel.swift */,
 				3B635EEA2498EDFC002A2ADA /* HomeViewModel.swift */,
+				3BF9D639249BE6BC00B9618B /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 				3B944D27246D6BEE004FCDFF /* HomeView.swift */,
 				3B944D29246D6C44004FCDFF /* SettingsView.swift */,
 				3B2555B424751E2D00C22964 /* CollectionView.swift */,
+				3BF9D635249BDE4100B9618B /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +116,7 @@
 				3B944D2C246D74CF004FCDFF /* Card.swift */,
 				3B2555B224751D0100C22964 /* Title.swift */,
 				3B635EE32498DB5A002A2ADA /* Tab.swift */,
+				3BF9D637249BDEA400B9618B /* SearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -240,14 +249,17 @@
 				3B944D2D246D74CF004FCDFF /* Card.swift in Sources */,
 				3B2555B324751D0100C22964 /* Title.swift in Sources */,
 				D778FA762445EFA100DD1D3F /* AppDelegate.swift in Sources */,
+				3BF9D63A249BE6BC00B9618B /* SearchViewModel.swift in Sources */,
 				3BF9D634249BB43100B9618B /* Collection.swift in Sources */,
 				3B635EE92498E74C002A2ADA /* Picture.swift in Sources */,
 				3B635EE42498DB5A002A2ADA /* Tab.swift in Sources */,
 				3B00EEA72497E9400054081F /* SettingsViewModel.swift in Sources */,
 				3B635EEB2498EDFC002A2ADA /* HomeViewModel.swift in Sources */,
 				3B2555B524751E2D00C22964 /* CollectionView.swift in Sources */,
+				3BF9D636249BDE4100B9618B /* SearchView.swift in Sources */,
 				3B944D28246D6BEE004FCDFF /* HomeView.swift in Sources */,
 				D778FA782445EFA100DD1D3F /* SceneDelegate.swift in Sources */,
+				3BF9D638249BDEA400B9618B /* SearchBar.swift in Sources */,
 				D778FA7A2445EFA100DD1D3F /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,11 +10,15 @@ struct ContentView: View {
                 HomeView()
             }
             
-            Tab(icon: "tray.full", tag: 2) {
+            Tab(icon: "magnifyingglass", tag: 2) {
+                SearchView()
+            }
+            
+            Tab(icon: "tray.full", tag: 3) {
                 CollectionView()
             }
             
-            Tab(icon: "gear", tag: 3) {
+            Tab(icon: "gear", tag: 4) {
                 SettingsView()
             }
         }

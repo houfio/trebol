@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 class Collection: ObservableObject {
-    private var plants: [Plant]
+    @Published private var plants: [Plant]
     private let saveKey = "collection"
     
     init() {
@@ -25,15 +25,11 @@ class Collection: ObservableObject {
     }
 
     public func add(_ plant: Plant) {
-        objectWillChange.send()
-        
         self.plants.append(plant)
         self.save()
     }
 
     public func remove(_ plant: Plant) {
-        objectWillChange.send()
-        
         self.plants.removeAll { $0.id == plant.id }
         self.save()
     }
