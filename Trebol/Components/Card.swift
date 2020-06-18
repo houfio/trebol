@@ -1,33 +1,33 @@
 import SwiftUI
+import URLImage
 
 struct Card: View {
     @Environment(\.colorScheme) var colorScheme
-    @Binding public var favorited: Bool
+    @EnvironmentObject public var collection: Collection
     
-    public var family: String
-    public var scientificName: String
-    public var name: String
-    public var header: String
+    public var plant: Plant
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image(self.header)
-                .resizable()
-                .scaledToFill()
-                .frame(height: 190)
-                .clipped()
+            URLImage(URL(string: self.plant.images!.count > 0 ? plant.images![0].url : "https://tinyurl.com/yarufx3b")!, delay: 0.25) { proxy in
+                proxy.image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 190)
+                    .clipped()
+            }
             
             HStack {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(self.name)
+                    Text(self.plant.commonName ?? "No name")
                         .font(.title)
                         .bold()
                         .lineLimit(1)
-                    Text(self.scientificName)
+                    Text(self.plant.scientificName)
                         .font(.subheadline)
                         .bold()
                         .lineLimit(1)
-                    Text(self.family)
+                    Text(self.plant.familyCommonName ?? "No family")
                         .font(.subheadline)
                         .foregroundColor(Color(UIColor.systemGray))
                         .lineLimit(1)
@@ -35,8 +35,12 @@ struct Card: View {
                 
                 Spacer()
                 
-                Image(systemName: "tray.and.arrow.down")
-                    .foregroundColor(Color(UIColor.systemGray))
+                Button(action: {
+                    self.collection.add(self.plant)
+                }) {
+                    Image(systemName: "tray.and.arrow.down")
+                        .foregroundColor(Color(UIColor.systemGray))
+                }
             }
             .padding(.horizontal)
         }
@@ -56,7 +60,9 @@ struct Card_Previews: PreviewProvider {
         @State private var favorited = false
 
         var body: some View {
-            Card(favorited: $favorited, family: "Tree", scientificName: "Kalolaw minoqie", name: "Apple tree with leaves", header: "plant")
+            VStack {
+                Text("Cards")
+            }
         }
     }
 }

@@ -5,20 +5,16 @@ class HomeViewModel: ObservableObject, Identifiable {
     @Published public var plants: [Plant] = []
     
     init() {
-        Fetch.get(route: "plants") { (json: [Plant]) in
-            self.plants = json
-        }
+        self.getPlants()
     }
     
-    public func getRandomPlants(amount: Int = 5, max: Int = 200) -> Void {
-        var objects: [Plant] = []
-        
-        for plant in (1...amount).map({_ in Int.random(in: 1...max)}) {
-            Fetch.get(route: "plants/\(plant)") { (json: Plant) in
-                objects.append(json)
+    private func getPlants() -> Void {
+        Fetch.get(route: "plants") { (plants: [Plant]) in
+            for plant in plants {
+                Fetch.get(route: "plants/\(plant.id)") { (plant: Plant) in
+                    self.plants.append(plant)
+                }
             }
         }
-        
-        self.plants = objects
     }
 }

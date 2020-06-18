@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var favorited = false
     @ObservedObject private var viewModel = HomeViewModel()
     
     var body: some View {
@@ -11,8 +10,7 @@ struct HomeView: View {
             ScrollView {
                 VStack {
                     ForEach(self.viewModel.plants, id: \.id) { plant in
-                        Card(favorited: self.$favorited, family: plant.slug, scientificName: plant.scientificName, name: "Common", header: "plant")
-                            .padding()
+                        Card(plant: plant)
                     }
                 }
             }

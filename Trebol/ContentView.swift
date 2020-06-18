@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var collection = Collection()
     @State private var tab = 1
     
     var body: some View {
@@ -17,6 +18,7 @@ struct ContentView: View {
                 SettingsView()
             }
         }
+        .environmentObject(self.collection)
     }
 }
 
