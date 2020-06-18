@@ -9,10 +9,8 @@ struct HomeView: View {
             Title(title: "Home")
 
             ScrollView {
-                VStack {
-                    ForEach(self.viewModel.plants, id: \.id) { plant in
-                        Card(favorited: self.$favorited, family: plant.slug, scientificName: plant.scientificName, name: "Common", header: "plant")
-                    }
+                ForEach(self.viewModel.plants, id: \.id) { plant in
+                    Card(favorited: self.$favorited, family: plant.slug, scientificName: plant.scientificName, name: "Common", header: "plant")
                 }
             }
         }

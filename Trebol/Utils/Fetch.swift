@@ -4,7 +4,7 @@ class Fetch {
     private let url: String = "https://trefle.io/api/"
     private let token: String = "YU5XeXBybjMwMCsydTJzOWkvOUsyZz09"
     
-    public func get<T: Codable>(route: String, completion: @escaping (T) -> ()) {
+    public func get<T: Codable>(route: String, completion: @escaping (T) -> Void) {
         if let url = URL(string: "\(self.url)\(route)?token=\(self.token)") {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
