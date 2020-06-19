@@ -1,21 +1,30 @@
 import SwiftUI
 
 struct SearchView: View {
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject private var viewModel = SearchViewModel()
-    @State private var searchText: String = ""
+    
+    init() {
+        UITableView.appearance().backgroundColor = self.colorScheme == .dark ? UIColor.black : UIColor.systemGray6
+        UITableViewCell.appearance().backgroundColor = self.colorScheme == .dark ? UIColor.black : UIColor.systemGray6
+    }
     
     var body: some View {
         VStack {
             Title(title: "Search")
             
             SearchBar(
-                text: $searchText,
+                text: self.$viewModel.text,
                 placeHolder: "Search plant",
-                onSearch: self.viewModel.searchPlants(text: self.searchText)
+                onSearch: self.viewModel.searchPlants
             )
             
             List(self.viewModel.plants, id: \.id) { plant in
                 Text(plant.scientificName)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
             }
         }
     }

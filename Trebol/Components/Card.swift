@@ -9,7 +9,7 @@ struct Card: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            URLImage(URL(string: self.plant.images!.count > 0 ? plant.images![0].url : "https://tinyurl.com/yarufx3b")!, delay: 0.25) { proxy in
+            URLImage(URL(string: self.plant.images!.count > 0 ? plant.images![0].url : "https://tinyurl.com/yarufx3b")!) { proxy in
                 proxy.image
                     .resizable()
                     .scaledToFill()

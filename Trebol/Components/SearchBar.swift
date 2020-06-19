@@ -5,13 +5,13 @@ import SwiftUI
 struct SearchBar: UIViewRepresentable {
     @Binding var text: String
     public let placeHolder: String?
-    public let onSearch: ()
+    public let onSearch: () -> Void
 
     class Coordinator: NSObject, UISearchBarDelegate {
         @Binding var text: String
-        public let onSearch: ()
+        public let onSearch: () -> Void
 
-        init(text: Binding<String>, onSearch: ()) {
+        init(text: Binding<String>, onSearch: @escaping () -> Void) {
             self._text = text
             self.onSearch = onSearch
         }
@@ -21,7 +21,12 @@ struct SearchBar: UIViewRepresentable {
         }
         
         public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            self.onSearch
+            self.onSearch()
+            searchBar.endEditing(true)
+        }
+        
+        public func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+            searchBar.endEditing(true)
         }
     }
 
@@ -33,6 +38,7 @@ struct SearchBar: UIViewRepresentable {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.delegate = context.coordinator
         searchBar.searchBarStyle = .minimal
+        searchBar.autocapitalizationType = .none
         searchBar.placeholder = self.placeHolder
         return searchBar
     }

@@ -8,7 +8,7 @@ struct SettingsView: View {
         VStack {
             Title(title: "Settings")
             
-            Toggle(isOn: $viewModel.darkMode) {
+            Toggle(isOn: self.$viewModel.darkMode) {
                 Image(systemName: "moon")
                 
                 Text("Dark mode")
