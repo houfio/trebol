@@ -4,6 +4,7 @@ struct Tab<Content: View>: View {
     @Environment(\.colorScheme) var colorScheme
     
     public var icon: String
+    public var label: String
     public var tag: Int
     public let viewBuilder: () -> Content
     
@@ -16,6 +17,8 @@ struct Tab<Content: View>: View {
         }.tabItem {
             Image(systemName: self.icon)
                 .font(.system(size: 22))
+            
+            Text(self.label)
         }.tag(self.tag)
     }
 }
@@ -23,11 +26,11 @@ struct Tab<Content: View>: View {
 struct Tab_Previews: PreviewProvider {
     static var previews: some View {
         TabView() {
-            Tab(icon: "house", tag: 1) {
+            Tab(icon: "house", label: "Home", tag: 1) {
                 HomeView()
             }
             
-            Tab(icon: "trash", tag: 2) {
+            Tab(icon: "trash",  label: "Trash", tag: 2) {
                 HomeView()
             }
         }

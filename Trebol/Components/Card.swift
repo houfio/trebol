@@ -57,11 +57,9 @@ struct Card_Previews: PreviewProvider {
     }
     
     struct PreviewWrapper: View {
-        @State private var favorited = false
-
         var body: some View {
             VStack {
-                Text("Cards")
+                Card(plant: Plant(id: 1, scientificName: "Test scientific", familyCommonName: "Family name", commonName: "", images: [Picture(url: "https://tinyurl.com/yarufx3b")]))
             }
         }
     }

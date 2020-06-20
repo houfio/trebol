@@ -6,20 +6,16 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $tab) {
-            Tab(icon: "house", tag: 1) {
+            Tab(icon: "house", label: "Home", tag: 1) {
                 HomeView()
             }
             
-            Tab(icon: "magnifyingglass", tag: 2) {
+            Tab(icon: "magnifyingglass", label: "Search", tag: 2) {
                 SearchView()
             }
             
-            Tab(icon: "tray.full", tag: 3) {
+            Tab(icon: "tray.full", label: "Collection", tag: 3) {
                 CollectionView()
-            }
-            
-            Tab(icon: "gear", tag: 4) {
-                SettingsView()
             }
         }
         .environmentObject(self.collection)
