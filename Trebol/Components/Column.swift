@@ -29,6 +29,13 @@ struct Column<T: Hashable, Content: View>: View {
                 ForEach(group, id: \.self) { item in
                     self.content(item)
                 }
+                
+                if group.count == 1 {
+                    VStack() {
+                        Spacer()
+                    }
+                        .frame(maxWidth: .infinity)
+                }
             }
         }
     }

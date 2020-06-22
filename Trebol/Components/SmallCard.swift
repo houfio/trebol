@@ -8,12 +8,15 @@ struct SmallCard: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 5) {
             Text("🌿")
             Text(self.text)
+                .foregroundColor(Color.black)
         }
-            .frame(maxWidth: .infinity, maxHeight: 40, alignment: .topLeading)
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: 80, alignment: .topLeading)
             .background(Color(UIColor.systemGreen))
+            .cornerRadius(8)
             .padding()
     }
 }
