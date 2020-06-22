@@ -11,9 +11,17 @@ struct DetailView: View {
         ScrollView {
             if self.viewModel.plant != nil {
                 VStack {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(self.viewModel.plant?.images ?? [], id: \.self) { image in
+                                PlantImage(image)
+                                    .padding()
+                            }
+                        }
+                    }
                     if !(self.viewModel.plant?.species.isEmpty ?? true) {
                         HStack {
-                            Text("More like this")
+                            Text("Species")
                                 .font(.headline)
                                 .padding(.horizontal)
                             Spacer()

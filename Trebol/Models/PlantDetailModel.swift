@@ -15,14 +15,16 @@ struct PlantDetailModel: Hashable {
         self.plant.images.count > 0 ? plant.images[0].url : "https://tinyurl.com/yarufx3b"
     }
     
-    var species: [PlantModel] {
-        var species: [PlantModel] = []
-        
-        self.plant.subSpecies.forEach { plant in
-            species.append(PlantModel(plant))
+    var images: [String] {
+        self.plant.images.map { image in
+            image.url
         }
-        
-        return species
+    }
+    
+    var species: [PlantModel] {
+        self.plant.subSpecies.map { plant in
+            PlantModel(plant)
+        }
     }
 
     init(_ plant: PlantDetailContainer) {
