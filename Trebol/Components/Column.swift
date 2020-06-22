@@ -11,7 +11,7 @@ struct Column<T: Hashable, Content: View>: View {
     
     private func groupedItems() -> [[T]] {
         var groupedItems: [[T]] = []
-        
+
         _ = self.items
                 .publisher
                 .collect(2)
@@ -19,7 +19,7 @@ struct Column<T: Hashable, Content: View>: View {
                 .sink(receiveValue: { value in
                     groupedItems = value
                 })
-        
+ 
         return groupedItems
     }
     

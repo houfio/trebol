@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A21F17EE85318337A4E1146 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FFC2E43F91D4DB6C2C10 /* Card.swift */; };
 		1A21F648CE6CA22CBA85C238 /* PlantDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F8B15D9104755F2BAF9E /* PlantDetailModel.swift */; };
-		3B9884AF24A0B2F400674218 /* ColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9884AE24A0B2F400674218 /* ColumnView.swift */; };
 		3B9884B124A0BB7A00674218 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9884B024A0BB7A00674218 /* SmallCard.swift */; };
 		3B9884B324A0D30100674218 /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9884B224A0D30100674218 /* CollectionService.swift */; };
 		3B9884B524A0D4B000674218 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9884B424A0D4B000674218 /* CollectionView.swift */; };
@@ -30,12 +29,12 @@
 		D720A82A249FC1A200217A77 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D720A829249FC1A200217A77 /* HomeView.swift */; };
 		D720A82C24A0013500217A77 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D720A82B24A0013500217A77 /* HomeViewModel.swift */; };
 		D720A82F24A0320800217A77 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = D720A82E24A0320800217A77 /* URLImage */; };
+		D76231E924A0F071008CAF74 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76231E824A0F071008CAF74 /* Column.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A21F8B15D9104755F2BAF9E /* PlantDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailModel.swift; sourceTree = "<group>"; };
 		1A21FFC2E43F91D4DB6C2C10 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		3B9884AE24A0B2F400674218 /* ColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnView.swift; sourceTree = "<group>"; };
 		3B9884B024A0BB7A00674218 /* SmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
 		3B9884B224A0D30100674218 /* CollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionService.swift; sourceTree = "<group>"; };
 		3B9884B424A0D4B000674218 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		D720A827249FBF5900217A77 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		D720A829249FC1A200217A77 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D720A82B24A0013500217A77 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D76231E824A0F071008CAF74 /* Column.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +118,7 @@
 		D7208974249E394E0060030A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D76231E824A0F071008CAF74 /* Column.swift */,
 				D7208975249E39650060030A /* Tab.swift */,
 				D720897C249E43ED0060030A /* SearchBar.swift */,
 				D720A827249FBF5900217A77 /* ActivityIndicator.swift */,
@@ -132,7 +133,6 @@
 			children = (
 				D720897A249E407A0060030A /* SearchView.swift */,
 				D720A829249FC1A200217A77 /* HomeView.swift */,
-				3B9884AE24A0B2F400674218 /* ColumnView.swift */,
 				3B9884B424A0D4B000674218 /* CollectionView.swift */,
 			);
 			path = Views;
@@ -253,9 +253,9 @@
 				D720A81D249FA8C700217A77 /* TrefleService.swift in Sources */,
 				D7208961249E38120060030A /* AppDelegate.swift in Sources */,
 				3B9884B124A0BB7A00674218 /* SmallCard.swift in Sources */,
+				D76231E924A0F071008CAF74 /* Column.swift in Sources */,
 				D7208963249E38120060030A /* SceneDelegate.swift in Sources */,
 				D720A821249FAFA900217A77 /* PlantModel.swift in Sources */,
-				3B9884AF24A0B2F400674218 /* ColumnView.swift in Sources */,
 				3B9884B524A0D4B000674218 /* CollectionView.swift in Sources */,
 				D720897B249E407A0060030A /* SearchView.swift in Sources */,
 				D720A828249FBF5900217A77 /* ActivityIndicator.swift in Sources */,
