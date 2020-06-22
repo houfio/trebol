@@ -9,26 +9,28 @@ struct Card: View {
     }
 
     var body: some View {
-        VStack(alignment: .center) {
-            URLImage(URL(string: self.plant.image)!) { proxy in
-                proxy.image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 320, height: 180)
-                    .clipped()
-                    .cornerRadius(14)
-                    .padding(.bottom, 6)
+        NavigationLink(destination: CollectionView()) {
+            VStack(alignment: .center) {
+                URLImage(URL(string: self.plant.image)!) { proxy in
+                    proxy.image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 320, height: 180)
+                        .clipped()
+                        .cornerRadius(14)
+                        .padding(.bottom, 6)
+                }
+                HStack {
+                    Text("🌿")
+                    Text(self.plant.name)
+                    Spacer()
+                }
             }
-            HStack {
-                Text("🌿")
-                Text(self.plant.name)
-                Spacer()
-            }
-        }
-            .frame(width: 320, height: 215)
-            .padding()
-            .background(Color(.systemGray6))
-            .cornerRadius(28)
+                .frame(width: 320, height: 215)
+                .padding()
+                .background(Color(.systemGray6))
+                .cornerRadius(28)
+        }.buttonStyle(EffectButtonStyle())
     }
 }
 
