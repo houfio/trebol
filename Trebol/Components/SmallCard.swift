@@ -12,8 +12,9 @@ struct SmallCard: View {
             Text("🌿")
             Text(self.text)
         }
-        .frame(maxWidth: .infinity, maxHeight: 40, alignment: .topLeading)
-        .padding()
+            .frame(maxWidth: .infinity, maxHeight: 40, alignment: .topLeading)
+            .background(Color(UIColor.systemGreen))
+            .padding()
     }
 }
 

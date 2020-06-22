@@ -1,18 +1,18 @@
 import SwiftUI
 
 struct CollectionView: View {
-    @EnvironmentObject private var collectionService: CollectionService
+    @EnvironmentObject private var collectionViewModel: CollectionViewModel
     
     var body: some View {
         VStack {
-            if self.collectionService.plants.isEmpty {
+            if self.collectionViewModel.plants.isEmpty {
                 Text("You don't have any collected plants yet! Add some plants to your collection to see them here 🌿")
                     .multilineTextAlignment(.leading)
                     .padding(.horizontal)
                 Spacer()
             } else {
                 ScrollView {
-                    Column(self.collectionService.plants) { item in
+                    Column(self.collectionViewModel.plants) { item in
                         SmallCard(item.name)
                     }
                 }

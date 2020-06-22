@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    private var collectionService = CollectionService()
+    private var collectionViewModel = CollectionViewModel()
 
     init() {
         UINavigationBar.appearance().backgroundColor = .systemBackground
@@ -22,7 +22,7 @@ struct ContentView: View {
                 CollectionView()
             }
         }
-            .environmentObject(self.collectionService)
+            .environmentObject(self.collectionViewModel)
     }
 }
 

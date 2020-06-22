@@ -3,41 +3,49 @@ import Combine
 
 final class CollectionService: ObservableObject {
     private let saveKey = "collection"
-
-    @Published var plants: [PlantDetailModel] = []
-
-    init() {
+    
+    func initialise() -> [PlantDetailModel] {
+        var plants: [PlantDetailModel] = []
+        
         if let data = UserDefaults.standard.data(forKey: self.saveKey) {
             if let decoded = try? JSONDecoder().decode([PlantDetailContainer].self, from: data) {
                 decoded.forEach { plant in
-                    self.plants.append(PlantDetailModel(plant))
+                    plants.append(PlantDetailModel(plant))
                 }
             }
         }
+        
+        return plants
     }
 
-    func contains(_ plant: PlantDetailModel) -> Bool {
-        self.plants.contains(where: { p in
-            p.id == plant.id
+    func contains(_ plants: [PlantDetailModel], id: Int) -> Bool {
+        plants.contains(where: { p in
+            p.id == id
         })
     }
 
-    func add(_ plant: PlantDetailModel) {
-        self.plants.append(plant)
-        self.save()
+    func add(_ plants: [PlantDetailModel], plant: PlantDetailModel) -> [PlantDetailModel] {
+        var plants = plants
+        plants.append(plant)
+        
+        self.save(plants)
+        return plants
     }
 
-    func remove(_ plant: PlantDetailModel) {
-        self.plants.removeAll { p in
+    func remove(_ plants: [PlantDetailModel], plant: PlantDetailModel) -> [PlantDetailModel] {
+        var plants = plants
+        plants.removeAll { p in
             p.id == plant.id
         }
-        self.save()
+        
+        self.save(plants)
+        return plants
     }
 
-    private func save() {
+    private func save(_ plants: [PlantDetailModel]) {
         var plantContainers: [PlantDetailContainer] = []
         
-        self.plants.forEach { plant in
+        plants.forEach { plant in
             plantContainers.append(PlantDetailContainer(id: plant.id, scientificName: plant.name, images: []))
         }
         
