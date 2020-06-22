@@ -2,28 +2,35 @@ import SwiftUI
 
 struct SearchView: View {
     @ObservedObject private var viewModel = SearchViewModel()
-    
+
     init() {
         UITableView.appearance().separatorColor = .clear
     }
 
     var body: some View {
-        List {
-            Section(header: SearchBar(text: self.$viewModel.search, placeholder: "Search plants", onSearch: self.viewModel.fetchPlants)) {
-                ForEach(self.viewModel.plants, id: \.self) { plant in
-                    Row(plant)
+        ScrollView {
+            VStack {
+                GeometryReader { g in
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(Color(.systemBackground))
+                        SearchBar(text: self.$viewModel.search, placeholder: "Search plants", onSearch: self.viewModel.fetchPlants)
+                    }
+                        .offset(x: 0, y: g.frame(in: .global).minY < 88 ? -g.frame(in: .global).minY + 88 : 0)
                 }
+                    .frame(height: 55)
+                    .zIndex(1)
                 if self.viewModel.loading {
                     HStack {
                         ActivityIndicator()
                         Text("Loading...")
                     }
-                        .padding(.horizontal)
+                } else {
+                    ForEach(self.viewModel.plants, id: \.self) { plant in
+                        Row(plant)
+                    }
                 }
             }
-                .padding(.horizontal, 6)
-                .listRowInsets(.init())
-                .background(Color(.systemBackground))
         }
             .navigationBarTitle(Text("Search"))
             .modifier(DismissKeyboardModifier())

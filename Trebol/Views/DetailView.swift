@@ -11,7 +11,7 @@ struct DetailView: View {
         ScrollView {
             if self.viewModel.plant != nil {
                 VStack {
-                    if !self.viewModel.plant!.species.isEmpty {
+                    if !(self.viewModel.plant?.species.isEmpty ?? true) {
                         HStack {
                             Text("More like this")
                                 .font(.headline)
@@ -20,7 +20,7 @@ struct DetailView: View {
                         }
                         ScrollView(.horizontal) {
                             HStack {
-                                ForEach(self.viewModel.plant!.species, id: \.self) { plant in
+                                ForEach(self.viewModel.plant?.species ?? [], id: \.self) { plant in
                                     SmallCard(name: plant.name)
                                         .padding()
                                 }
@@ -38,7 +38,7 @@ struct DetailView: View {
                     .padding()
             }
         }
-        .navigationBarTitle(self.viewModel.plant!.name)
+        .navigationBarTitle(self.viewModel.plant?.name ?? "")
     }
 }
 

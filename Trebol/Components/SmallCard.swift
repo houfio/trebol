@@ -26,7 +26,8 @@ struct SmallCard: View {
         } else {
             return AnyView(NavigationLink(destination: DetailView(DetailViewModel(plant: self.plant))) {
                 vStack
-            })
+            }
+                .buttonStyle(EffectButtonStyle()))
         }
     }
 }
