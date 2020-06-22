@@ -2,13 +2,16 @@ import SwiftUI
 
 struct SearchView: View {
     @ObservedObject private var viewModel = SearchViewModel()
+    
+    init() {
+        UITableView.appearance().separatorColor = .clear
+    }
 
     var body: some View {
         List {
             Section(header: SearchBar(text: self.$viewModel.search, placeholder: "Search plants", onSearch: self.viewModel.fetchPlants)) {
                 ForEach(self.viewModel.plants, id: \.self) { plant in
-                    Text(plant.name)
-                        .padding(.horizontal)
+                    Row(plant.name)
                 }
                 if self.viewModel.loading {
                     HStack {
@@ -18,6 +21,7 @@ struct SearchView: View {
                         .padding(.horizontal)
                 }
             }
+                .padding(.horizontal, 6)
                 .listRowInsets(.init())
                 .background(Color(.systemBackground))
         }
