@@ -16,6 +16,8 @@ struct CollectionView: View {
                         SmallCard(item.name)
                     }
                 }
+                    .padding(.horizontal, 12)
+                    .padding(.bottom, 10)
             }
         }
         .navigationBarTitle(Text("Collection"))

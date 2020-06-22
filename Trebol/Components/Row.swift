@@ -17,8 +17,8 @@ struct Row: View {
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .background(Color(.systemGray6))
             .cornerRadius(8)
-            .padding(.horizontal)
-            .padding(.top)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 6)
     }
 }
 
