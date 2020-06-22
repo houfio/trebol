@@ -12,7 +12,7 @@ struct CollectionView: View {
                 Spacer()
             } else {
                 ScrollView {
-                    ColumnView(self.collectionService.plants) { item in
+                    Column(self.collectionService.plants) { item in
                         SmallCard(item.name)
                     }
                 }

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ColumnView<T: Hashable, Content: View>: View {
+struct Column<T: Hashable, Content: View>: View {
     private let items: [T]
     private let content: (_ item: T) -> Content
     
@@ -36,7 +36,7 @@ struct ColumnView<T: Hashable, Content: View>: View {
 
 struct ColumnView_Previews: PreviewProvider {
     static var previews: some View {
-        ColumnView([PlantDetailContainer(id: 0, scientificName: "Test", images: [])]) { item in
+        Column([PlantDetailContainer(id: 0, scientificName: "Test", images: [])]) { item in
             Text("Lol!")
         }
     }

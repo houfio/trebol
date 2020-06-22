@@ -24,10 +24,10 @@ struct HomeView: View {
                         }
                     }
                     ScrollView {
-                        ColumnView(self.viewModel.plants) { item in
+                        Column(self.viewModel.plants) { item in
                             SmallCard(item.name)
                                 .onTapGesture {
-                                    print("bruh")
+                                    self.collectionService.add(item)
                                 }
                         }
                     }
