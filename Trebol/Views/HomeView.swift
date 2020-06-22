@@ -19,6 +19,7 @@ struct HomeView: View {
                         HStack {
                             ForEach(self.viewModel.plants[0..<3], id: \.self) { plant in
                                 Card(plant)
+                                    .padding()
                             }
                         }
                     }

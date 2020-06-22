@@ -9,26 +9,25 @@ struct Card: View {
     }
 
     var body: some View {
-        ZStack {
+        VStack(alignment: .center) {
             URLImage(URL(string: self.plant.image)!) { proxy in
                 proxy.image
                     .resizable()
                     .scaledToFill()
+                    .frame(width: 320, height: 180)
+                    .clipped()
+                    .cornerRadius(14)
+                    .padding(.bottom, 6)
             }
-            VStack {
+            HStack {
+                Text("🌿")
+                Text(self.plant.name)
                 Spacer()
-                HStack {
-                    Text("Plant")
-                    Text(self.plant.name)
-                    Spacer()
-                }
-                .padding()
             }
         }
-        .frame(width: 350, height: 250)
-        .cornerRadius(22)
-        .shadow(radius: 8)
         .padding()
+        .background(Color(.systemGray6))
+        .cornerRadius(28)
     }
 }
 
