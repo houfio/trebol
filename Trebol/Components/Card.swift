@@ -26,7 +26,7 @@ struct Card: View {
                     Text(self.plant.name)
                     Spacer()
                 }
-                    .padding()
+                .padding()
             }
         }
         .frame(width: 350, height: 250)

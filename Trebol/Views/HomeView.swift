@@ -14,7 +14,7 @@ struct HomeView: View {
                 }
             } else {
                 VStack {
-                    ScrollView(.horizontal) {
+                    ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(self.viewModel.plants[0..<3], id: \.self) { plant in
                                 Card(plant)
@@ -23,7 +23,7 @@ struct HomeView: View {
                     }
                     ScrollView {
                         ColumnView(self.viewModel.plants) { item in
-                            Text("\(item.name)")
+                            SmallCard(item.name)
                         }
                     }
                 }
