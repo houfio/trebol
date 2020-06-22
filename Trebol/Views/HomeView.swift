@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject private var viewModel = HomeViewModel()
+    @EnvironmentObject private var collectionService: CollectionService
 
     var body: some View {
         ScrollView {
@@ -24,6 +25,9 @@ struct HomeView: View {
                     ScrollView {
                         ColumnView(self.viewModel.plants) { item in
                             SmallCard(item.name)
+                                .onTapGesture {
+                                    self.collectionService.add(item)
+                                }
                         }
                     }
                 }

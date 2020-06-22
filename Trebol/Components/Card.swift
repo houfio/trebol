@@ -15,10 +15,7 @@ struct Card: View {
                     .resizable()
                     .scaledToFill()
             }
-            Rectangle()
-                .foregroundColor(.clear)
-                .background(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .top, endPoint: .bottom))
-                .opacity(0.75)
+            
             VStack {
                 Spacer()
                 HStack {

@@ -1,6 +1,9 @@
 import SwiftUI
+import Combine
 
 struct ContentView: View {
+     @ObservedObject private var collectionService = CollectionService()
+    
     init() {
         UINavigationBar.appearance().backgroundColor = .systemBackground
         UINavigationBar.appearance().barTintColor = .systemBackground
@@ -16,10 +19,10 @@ struct ContentView: View {
                 SearchView()
             }
             Tab(icon: "tray", label: "Collection", tag: 2) {
-                Text("Collection")
-                    .navigationBarTitle("Collection")
+                CollectionView()
             }
         }
+        .environmentObject(self.collectionService)
     }
 }
 

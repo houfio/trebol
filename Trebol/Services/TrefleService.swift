@@ -46,12 +46,12 @@ struct PlantContainer: Decodable, Hashable {
     let scientificName: String
 }
 
-struct PlantDetailContainer: Decodable, Hashable {
+struct PlantDetailContainer: Decodable, Encodable, Hashable {
     let id: Int
     let scientificName: String
     let images: [ImageContainer]
 }
 
-struct ImageContainer: Decodable, Hashable {
+struct ImageContainer: Decodable, Encodable, Hashable {
     let url: String
 }
