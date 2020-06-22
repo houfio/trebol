@@ -25,9 +25,10 @@ struct Card: View {
                 Spacer()
             }
         }
-        .padding()
-        .background(Color(.systemGray6))
-        .cornerRadius(28)
+            .frame(width: 320, height: 215)
+            .padding()
+            .background(Color(.systemGray6))
+            .cornerRadius(28)
     }
 }
 
