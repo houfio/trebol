@@ -1,28 +1,30 @@
 import SwiftUI
 
 struct SmallCard: View {
-    private let text: String
+    private let plant: PlantModel
 
-    init(_ text: String) {
-        self.text = text
+    init(_ plant: PlantModel) {
+        self.plant = plant
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            Text("🌿")
-            Text(self.text)
+        NavigationLink(destination: DetailView(DetailViewModel(plant: self.plant))) {
+            VStack(alignment: .leading, spacing: 5) {
+                Text("🌿")
+                Text(self.plant.name)
+            }
+                .padding()
+                .frame(maxWidth: .infinity, maxHeight: 80, alignment: .topLeading)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .padding(.horizontal, 4)
+                .padding(.vertical, 8)
         }
-            .padding()
-            .frame(maxWidth: .infinity, maxHeight: 80, alignment: .topLeading)
-            .background(Color(.systemGray6))
-            .cornerRadius(8)
-            .padding(.horizontal, 4)
-            .padding(.vertical, 8)
     }
 }
 
 struct SmallCard_Previews: PreviewProvider {
     static var previews: some View {
-        SmallCard("Test")
+        SmallCard(PlantModel(PlantContainer(id: 142735, scientificName: "Hibiscus moscheutos")))
     }
 }

@@ -40,17 +40,18 @@ final class TrefleService {
     }
 }
 
-struct PlantContainer: Decodable, Hashable {
-    let id: Int
-    let scientificName: String
-}
-
 struct PlantDetailContainer: Decodable, Encodable, Hashable {
     let id: Int
     let scientificName: String
     let images: [ImageContainer]
+    let subSpecies: [PlantContainer]
 }
 
 struct ImageContainer: Decodable, Encodable, Hashable {
     let url: String
+}
+
+struct PlantContainer: Decodable, Encodable, Hashable {
+    let id: Int
+    let scientificName: String
 }

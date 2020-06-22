@@ -38,7 +38,7 @@ final class CollectionService: ObservableObject {
         var plantContainers: [PlantDetailContainer] = []
 
         plants.forEach { plant in
-            plantContainers.append(PlantDetailContainer(id: plant.id, scientificName: plant.name, images: []))
+            plantContainers.append(PlantDetailContainer(id: plant.id, scientificName: plant.name, images: [], subSpecies: []))
         }
 
         if let encoded = try? JSONEncoder().encode(plantContainers) {

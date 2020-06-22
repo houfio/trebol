@@ -10,7 +10,23 @@ struct DetailView: View {
     var body: some View {
         ScrollView {
             if self.viewModel.plant != nil {
-                Text(self.viewModel.plant!.name)
+                VStack {
+                    Text(self.viewModel.plant!.name)
+                    HStack {
+                        Text("Popular")
+                            .font(.headline)
+                            .padding(.horizontal)
+                        Spacer()
+                    }
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(self.viewModel.plant!.species, id: \.self) { plant in
+                                SmallCard(PlantModel(PlantContainer(id: plant.id, scientificName: plant.name)))
+                                    .padding()
+                            }
+                        }
+                    }
+                }
             } else {
                 HStack {
                     Spacer()
@@ -21,6 +37,21 @@ struct DetailView: View {
                     .padding()
             }
         }
-            .navigationBarTitle("Plant")
+        .navigationBarTitle(self.viewModel.plant!.name)
+    }
+}
+
+struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetailView(
+            DetailViewModel(
+                plant: PlantModel(
+                    PlantContainer(
+                        id: 142722,
+                        scientificName: "Scientific name"
+                    )
+                )
+            )
+        )
     }
 }

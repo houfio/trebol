@@ -13,14 +13,14 @@ struct CollectionView: View {
             } else {
                 ScrollView {
                     Column(self.collectionViewModel.plants) { item in
-                        SmallCard(item.name)
+                        SmallCard(PlantModel(PlantContainer(id: item.id, scientificName: item.name)))
                     }
                 }
                     .padding(.horizontal, 12)
                     .padding(.bottom, 10)
             }
         }
-        .navigationBarTitle(Text("Collection"))
+            .navigationBarTitle(Text("Collection"))
     }
 }
 

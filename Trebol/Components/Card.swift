@@ -37,6 +37,6 @@ struct Card: View {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(PlantDetailModel(PlantDetailContainer(id: 0, scientificName: "Test", images: [])))
+        Card(PlantDetailModel(PlantDetailContainer(id: 0, scientificName: "Test", images: [], subSpecies: [])))
     }
 }

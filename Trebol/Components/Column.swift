@@ -43,7 +43,7 @@ struct Column<T: Hashable, Content: View>: View {
 
 struct ColumnView_Previews: PreviewProvider {
     static var previews: some View {
-        Column([PlantDetailContainer(id: 0, scientificName: "Test", images: [])]) { item in
+        Column([PlantDetailContainer(id: 0, scientificName: "Test", images: [], subSpecies: [])]) { item in
             Text("Lol!")
         }
     }

@@ -2,7 +2,6 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject private var viewModel = HomeViewModel()
-    @EnvironmentObject private var collectionViewModel: CollectionViewModel
 
     var body: some View {
         ScrollView {
@@ -32,10 +31,7 @@ struct HomeView: View {
                     }
                     ScrollView {
                         Column(self.viewModel.plants) { item in
-                            SmallCard(item.name)
-                                .onTapGesture {
-                                    self.collectionViewModel.add(item)
-                                }
+                            SmallCard(PlantModel(PlantContainer(id: item.id, scientificName: item.name)))
                         }
                     }
                         .padding(.horizontal, 12)
