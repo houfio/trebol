@@ -9,14 +9,12 @@ struct SmallCard: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image(systemName: "heart")
+            Text("🌿")
             
             Text(self.text)
         }
         .frame(maxWidth: .infinity, maxHeight: 40, alignment: .topLeading)
         .padding()
-        .cornerRadius(10)
-        .shadow(radius: 8)
     }
 }
 
