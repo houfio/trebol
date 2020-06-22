@@ -22,7 +22,7 @@ struct HomeView: View {
                         }
                     }
                     ScrollView {
-                        ColumnView(items: self.viewModel.plants) { item in
+                        ColumnView(self.viewModel.plants) { item in
                             Text("\(item.name)")
                         }
                     }
@@ -31,7 +31,7 @@ struct HomeView: View {
         }
             .navigationBarTitle("Home")
     }
-}
+} 
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

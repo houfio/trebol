@@ -1,8 +1,13 @@
 import SwiftUI
 
 struct ColumnView<T: Hashable, Content: View>: View {
-    let items: [T]
-    let content: (_ item: T) -> Content
+    private let items: [T]
+    private let content: (_ item: T) -> Content
+    
+    init(_ items: [T], content: @escaping (_ item: T) -> Content) {
+        self.items = items
+        self.content = content
+    }
     
     private func groupedItems() -> [[T]] {
         var groupedItems: [[T]] = []
@@ -18,7 +23,7 @@ struct ColumnView<T: Hashable, Content: View>: View {
     
     var body: some View {
         ForEach(self.groupedItems(), id: \.self) { group in
-            HStack {
+            HStack() {
                 ForEach(group, id: \.self) { item in
                     self.content(item)
                 }
@@ -29,7 +34,7 @@ struct ColumnView<T: Hashable, Content: View>: View {
 
 struct ColumnView_Previews: PreviewProvider {
     static var previews: some View {
-        ColumnView(items: [PlantDetailContainer(id: 0, scientificName: "Test", images: [])]) { item in
+        ColumnView([PlantDetailContainer(id: 0, scientificName: "Test", images: [])]) { item in
             Text("Lol!")
         }
     }

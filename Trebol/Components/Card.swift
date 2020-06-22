@@ -30,9 +30,9 @@ struct Card: View {
             }
         }
         .frame(width: 350, height: 250)
-            .cornerRadius(22)
-            .shadow(radius: 8)
-            .padding()
+        .cornerRadius(22)
+        .shadow(radius: 8)
+        .padding()
     }
 }
 
