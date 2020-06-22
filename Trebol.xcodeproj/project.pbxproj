@@ -73,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B176D5D24A13D1B00985C8B /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +212,7 @@
 			);
 			name = Trebol;
 			packageProductDependencies = (
-				D720A82E24A0320800217A77,
+				D720A82E24A0320800217A77 /* URLImage */,
 			);
 			productName = Trebol;
 			productReference = D720895D249E38120060030A /* Trebol.app */;
@@ -242,7 +243,7 @@
 			);
 			mainGroup = D7208954249E38120060030A;
 			packageReferences = (
-				D720A82D24A0320800217A77,
+				D720A82D24A0320800217A77 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = D720895E249E38120060030A /* Products */;
 			projectDirPath = "";
@@ -432,7 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Trebol/Preview Content\"";
-				DEVELOPMENT_TEAM = VA296MD3UU;
+				DEVELOPMENT_TEAM = C9C432ZZC9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Trebol/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
@@ -453,7 +454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Trebol/Preview Content\"";
-				DEVELOPMENT_TEAM = VA296MD3UU;
+				DEVELOPMENT_TEAM = C9C432ZZC9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Trebol/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
@@ -492,7 +493,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D720A82D24A0320800217A77 = {
+		D720A82D24A0320800217A77 /* XCRemoteSwiftPackageReference "url-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
 			requirement = {
@@ -503,9 +504,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D720A82E24A0320800217A77 = {
+		D720A82E24A0320800217A77 /* URLImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D720A82D24A0320800217A77;
+			package = D720A82D24A0320800217A77 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */

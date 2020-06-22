@@ -21,7 +21,7 @@ struct Row: View {
         }
             .buttonStyle(EffectButtonStyle())
             .padding(.horizontal)
-            .padding(.vertical, 3)
+            .padding(.bottom, 8)
     }
 }
 
