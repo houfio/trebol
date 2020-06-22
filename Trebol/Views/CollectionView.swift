@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CollectionView: View {
     @EnvironmentObject private var collectionViewModel: CollectionViewModel
-    
+
     var body: some View {
         VStack {
             if self.collectionViewModel.plants.isEmpty {

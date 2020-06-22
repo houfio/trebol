@@ -22,6 +22,7 @@ struct ContentView: View {
                 CollectionView()
             }
         }
+            .accentColor(Color(.systemGreen))
             .environmentObject(self.collectionViewModel)
     }
 }
