@@ -26,7 +26,7 @@ struct HomeView: View {
                         ColumnView(self.viewModel.plants) { item in
                             SmallCard(item.name)
                                 .onTapGesture {
-                                    self.collectionService.add(item)
+                                    print("bruh")
                                 }
                         }
                     }
@@ -35,7 +35,7 @@ struct HomeView: View {
         }
             .navigationBarTitle("Home")
     }
-} 
+}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

@@ -10,7 +10,6 @@ struct SmallCard: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("🌿")
-            
             Text(self.text)
         }
         .frame(maxWidth: .infinity, maxHeight: 40, alignment: .topLeading)

@@ -16,7 +16,9 @@ struct ColumnView<T: Hashable, Content: View>: View {
                 .publisher
                 .collect(2)
                 .collect()
-                .sink(receiveValue: { groupedItems = $0 })
+                .sink(receiveValue: { value in
+                    groupedItems = value
+                })
         
         return groupedItems
     }

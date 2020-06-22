@@ -13,6 +13,7 @@ class HomeViewModel: ObservableObject {
     var cancellable: [AnyCancellable]?
 
     init() {
+        print("bruh")
         self.cancellable = self.plantIds.map { id in
             self.trefleService.fetchPlant(id).sink(receiveCompletion: { completion in
                 print(completion)

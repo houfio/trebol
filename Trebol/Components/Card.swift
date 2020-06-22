@@ -15,7 +15,6 @@ struct Card: View {
                     .resizable()
                     .scaledToFill()
             }
-            
             VStack {
                 Spacer()
                 HStack {

@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct Tab<Content: View>: View {
-    public var icon: String
-    public var label: String
-    public var tag: Int
-    public let content: () -> Content
+    var icon: String
+    var label: String
+    var tag: Int
+    let content: () -> Content
 
     var body: some View {
         NavigationView() {

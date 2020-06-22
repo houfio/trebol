@@ -5,14 +5,14 @@ struct CollectionView: View {
     
     var body: some View {
         VStack {
-            if self.collectionService.getPlants().count == 0 {
+            if self.collectionService.plants.isEmpty {
                 Text("You don't have any collected plants yet! Add some plants to your collection to see them here 🌿")
                     .multilineTextAlignment(.leading)
                     .padding(.horizontal)
                 Spacer()
             } else {
                 ScrollView {
-                    ColumnView(self.collectionService.getPlants()) { item in
+                    ColumnView(self.collectionService.plants) { item in
                         SmallCard(item.name)
                     }
                 }
