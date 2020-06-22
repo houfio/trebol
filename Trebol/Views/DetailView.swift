@@ -11,11 +11,13 @@ struct DetailView: View {
         ScrollView {
             if self.viewModel.plant != nil {
                 VStack {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(self.viewModel.plant?.images ?? [], id: \.self) { image in
-                                PlantImage(image)
-                                    .padding()
+                    if !(self.viewModel.plant?.images.isEmpty ?? true) {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                ForEach(self.viewModel.plant?.images[0..<10] ?? [], id: \.self) { image in
+                                    PlantImage(image)
+                                        .padding()
+                                }
                             }
                         }
                     }
