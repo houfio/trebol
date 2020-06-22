@@ -22,8 +22,8 @@ class SearchViewModel: ObservableObject {
         self.cancellable = self.trefleService.fetchPlants(self.search).sink(receiveCompletion: { completion in
             print(completion)
         }, receiveValue: { plantContainers in
-            self.plants = plantContainers.map {
-                PlantModel($0)
+            self.plants = plantContainers.map { plantContainer in
+                PlantModel(plantContainer)
             }
             self.loading = false
         })

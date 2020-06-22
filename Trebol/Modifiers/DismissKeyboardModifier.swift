@@ -3,8 +3,8 @@ import SwiftUI
 struct DismissKeyboardModifier: ViewModifier {
     var gesture = DragGesture().onChanged { _ in
         UIApplication.shared.windows
-            .filter {
-                $0.isKeyWindow
+            .filter { window in
+                window.isKeyWindow
             }
             .first?
             .endEditing(true)
