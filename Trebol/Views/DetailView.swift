@@ -12,17 +12,19 @@ struct DetailView: View {
             if self.viewModel.plant != nil {
                 VStack {
                     Text(self.viewModel.plant!.name)
-                    HStack {
-                        Text("More like this")
-                            .font(.headline)
-                            .padding(.horizontal)
-                        Spacer()
-                    }
-                    ScrollView(.horizontal) {
+                    if !self.viewModel.plant!.species.isEmpty {
                         HStack {
-                            ForEach(self.viewModel.plant!.species, id: \.self) { plant in
-                                SmallCard(PlantModel(PlantContainer(id: plant.id, scientificName: plant.name)))
-                                    .padding()
+                            Text("More like this")
+                                .font(.headline)
+                                .padding(.horizontal)
+                            Spacer()
+                        }
+                        ScrollView(.horizontal) {
+                            HStack {
+                                ForEach(self.viewModel.plant!.species, id: \.self) { plant in
+                                    SmallCard(PlantModel(PlantContainer(id: plant.id, scientificName: plant.name)))
+                                        .padding()
+                                }
                             }
                         }
                     }
