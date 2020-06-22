@@ -18,7 +18,7 @@ struct Card: View {
             Rectangle()
                 .foregroundColor(.clear)
                 .background(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .top, endPoint: .bottom))
-                .opacity(0.5)
+                .opacity(0.75)
             VStack {
                 Spacer()
                 HStack {

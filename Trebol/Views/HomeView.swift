@@ -4,31 +4,30 @@ struct HomeView: View {
     @ObservedObject private var viewModel = HomeViewModel()
 
     var body: some View {
-        GeometryReader { geometry in
-            ScrollView {
-                if self.viewModel.loading {
-                    HStack {
-                        ActivityIndicator()
-                        Text("Loading...")
-                    }
-                } else {
-                    VStack {
-                        ScrollView(.horizontal) {
-                            HStack {
-                                ForEach(self.viewModel.plants[0..<3], id: \.self) { plant in
-                                    Card(plant)
-                                }
+        ScrollView {
+            if self.viewModel.loading {
+                HStack {
+                    Spacer()
+                    ActivityIndicator()
+                    Text("Loading...")
+                    Spacer()
+                }
+            } else {
+                VStack {
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(self.viewModel.plants[0..<3], id: \.self) { plant in
+                                Card(plant)
                             }
                         }
-                        ForEach(self.viewModel.plants[3...], id: \.self) { plant in
-                            Text("\(plant.name)")
-                        }
                     }
-                        .frame(width: geometry.size.width)
+                    ForEach(self.viewModel.plants[3...], id: \.self) { plant in
+                        Text("\(plant.name)")
+                    }
                 }
             }
-                .navigationBarTitle("Home")
         }
+            .navigationBarTitle("Home")
     }
 }
 
