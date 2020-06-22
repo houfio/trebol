@@ -21,8 +21,10 @@ struct HomeView: View {
                             }
                         }
                     }
-                    ForEach(self.viewModel.plants[3...], id: \.self) { plant in
-                        Text("\(plant.name)")
+                    ScrollView {
+                        ColumnView(items: self.viewModel.plants) { item in
+                            Text("\(item.name)")
+                        }
                     }
                 }
             }
