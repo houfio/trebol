@@ -2,8 +2,8 @@ import SwiftUI
 
 struct ContentView: View {
     init() {
-        UINavigationBar.appearance().backgroundColor = .white
-        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().backgroundColor = .systemBackground
+        UINavigationBar.appearance().barTintColor = .systemBackground
         UINavigationBar.appearance().shadowImage = UIImage()
     }
 
