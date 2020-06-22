@@ -1,20 +1,24 @@
 import Foundation
 import Combine
 
-class HomeViewModel: ObservableObject, Identifiable {
-    @Published public var plants: [Plant] = []
-    
-    init() {
-        self.getPlants()
+class HomeViewModel: ObservableObject {
+    private let trefleService = TrefleService()
+    private let plantIds = [142722, 142735, 175814, 189349, 153952, 153939, 153951, 104800, 105301]
+
+    @Published var plants = [PlantDetailModel]()
+
+    var loading: Bool {
+        self.plants.count != self.plantIds.count
     }
-    
-    private func getPlants() -> Void {
-        Fetch.get(route: "plants") { (plants: [Plant]) in
-            for plant in plants {
-                Fetch.get(route: "plants/\(plant.id)") { (plant: Plant) in
-                    self.plants.append(plant)
-                }
-            }
+    var cancellable: [AnyCancellable]?
+
+    init() {
+        self.cancellable = self.plantIds.map { id in
+            self.trefleService.fetchPlant(id).sink(receiveCompletion: { completion in
+                print(completion)
+            }, receiveValue: { detailContainer in
+                self.plants.append(PlantDetailModel(detailContainer))
+            })
         }
     }
 }

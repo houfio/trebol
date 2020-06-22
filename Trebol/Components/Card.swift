@@ -2,65 +2,42 @@ import SwiftUI
 import URLImage
 
 struct Card: View {
-    @Environment(\.colorScheme) var colorScheme
-    @EnvironmentObject public var collection: Collection
-    
-    public var plant: Plant
-    
+    private let plant: PlantDetailModel
+
+    init(_ plant: PlantDetailModel) {
+        self.plant = plant
+    }
+
     var body: some View {
-        VStack(alignment: .leading) {
-            URLImage(URL(string: self.plant.images!.count > 0 ? plant.images![0].url : "https://tinyurl.com/yarufx3b")!) { proxy in
+        ZStack {
+            URLImage(URL(string: self.plant.image)!) { proxy in
                 proxy.image
                     .resizable()
                     .scaledToFill()
-                    .frame(height: 190)
-                    .clipped()
             }
-            
-            HStack {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text(self.plant.commonName ?? "No name")
-                        .font(.title)
-                        .bold()
-                        .lineLimit(1)
-                    Text(self.plant.scientificName)
-                        .font(.subheadline)
-                        .bold()
-                        .lineLimit(1)
-                    Text(self.plant.familyCommonName ?? "No family")
-                        .font(.subheadline)
-                        .foregroundColor(Color(UIColor.systemGray))
-                        .lineLimit(1)
-                }
-                
+            Rectangle()
+                .foregroundColor(.clear)
+                .background(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .top, endPoint: .bottom))
+                .opacity(0.5)
+            VStack {
                 Spacer()
-                
-                Button(action: {
-                    self.collection.contains(self.plant) ? self.collection.remove(self.plant) : self.collection.add(self.plant)
-                }) {
-                    Image(systemName: self.collection.contains(self.plant) ? "tray.and.arrow.up" : "tray.and.arrow.down")
-                        .foregroundColor(Color(UIColor.systemGray))
+                HStack {
+                    Text("Plant")
+                    Text(self.plant.name)
+                    Spacer()
                 }
+                    .padding()
             }
-            .padding(.horizontal)
         }
-        .padding(.bottom)
-        .background(self.colorScheme == .dark ? Color(UIColor.systemGray6) : Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 8.0)
+        .frame(width: 350, height: 250)
+            .cornerRadius(22)
+            .shadow(radius: 8)
+            .padding()
     }
 }
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        PreviewWrapper()
-    }
-    
-    struct PreviewWrapper: View {
-        var body: some View {
-            VStack {
-                Card(plant: Plant(id: 1, scientificName: "Test scientific", familyCommonName: "Family name", commonName: "", images: [Picture(url: "https://tinyurl.com/yarufx3b")]))
-            }
-        }
+        Card(PlantDetailModel(PlantDetailContainer(id: 0, scientificName: "Test", images: [])))
     }
 }

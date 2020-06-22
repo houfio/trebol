@@ -1,24 +1,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var collection = Collection()
-    @State private var tab = 1
-    
+    init() {
+        UINavigationBar.appearance().backgroundColor = .white
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().shadowImage = UIImage()
+    }
+
     var body: some View {
-        TabView(selection: $tab) {
-            Tab(icon: "house", label: "Home", tag: 1) {
+        TabView() {
+            Tab(icon: "house", label: "Home", tag: 0) {
                 HomeView()
             }
-            
-            Tab(icon: "magnifyingglass", label: "Search", tag: 2) {
+            Tab(icon: "magnifyingglass", label: "Search", tag: 1) {
                 SearchView()
             }
-            
-            Tab(icon: "tray.full", label: "Collection", tag: 3) {
-                CollectionView()
+            Tab(icon: "tray", label: "Collection", tag: 2) {
+                Text("Collection")
+                    .navigationBarTitle("Collection")
             }
         }
-        .environmentObject(self.collection)
     }
 }
 

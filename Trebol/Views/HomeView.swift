@@ -2,26 +2,32 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject private var viewModel = HomeViewModel()
-    
-    init() {
-        UITableView.appearance().separatorStyle = .none
-    }
-    
-    var body: some View {
-        VStack {
-            Title(title: "Home")
 
-            if !self.viewModel.plants.isEmpty {
-                ScrollView {
-                    ForEach(self.viewModel.plants, id: \.id) { plant in
-                        Card(plant: plant)
+    var body: some View {
+        GeometryReader { geometry in
+            ScrollView {
+                if self.viewModel.loading {
+                    HStack {
+                        ActivityIndicator()
+                        Text("Loading...")
                     }
+                } else {
+                    VStack {
+                        ScrollView(.horizontal) {
+                            HStack {
+                                ForEach(self.viewModel.plants[0..<3], id: \.self) { plant in
+                                    Card(plant)
+                                }
+                            }
+                        }
+                        ForEach(self.viewModel.plants[3...], id: \.self) { plant in
+                            Text("\(plant.name)")
+                        }
+                    }
+                        .frame(width: geometry.size.width)
                 }
-            } else {
-                Spacer()
-                ActivityIndicator()
-                Spacer()
             }
+                .navigationBarTitle("Home")
         }
     }
 }

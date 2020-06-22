@@ -1,15 +1,12 @@
-import Foundation
 import SwiftUI
+import UIKit
 
 struct ActivityIndicator: UIViewRepresentable {
-    public let size: CGFloat = 1.5
-    
-    public func makeUIView(context: Context) -> UIActivityIndicatorView {
-        UIActivityIndicatorView()
+    func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
+        UIActivityIndicatorView(style: .medium)
     }
 
-    public func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) {
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
         uiView.startAnimating()
-        uiView.transform = CGAffineTransform(scaleX: self.size, y: self.size);
     }
 }
