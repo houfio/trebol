@@ -24,7 +24,6 @@ final class TrefleService {
                 response.data
             }
             .decode(type: T.self, decoder: decoder)
-            .retry(2)
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }

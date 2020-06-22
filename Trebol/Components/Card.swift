@@ -9,7 +9,7 @@ struct Card: View {
     }
 
     var body: some View {
-        NavigationLink(destination: CollectionView()) {
+        NavigationLink(destination: DetailView(DetailViewModel(detail: self.plant))) {
             VStack(alignment: .center) {
                 URLImage(URL(string: self.plant.image)!) { proxy in
                     proxy.image
@@ -30,7 +30,8 @@ struct Card: View {
                 .padding()
                 .background(Color(.systemGray6))
                 .cornerRadius(28)
-        }.buttonStyle(EffectButtonStyle())
+        }
+            .buttonStyle(EffectButtonStyle())
     }
 }
 

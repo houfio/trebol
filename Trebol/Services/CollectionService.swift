@@ -4,13 +4,13 @@ import Combine
 final class CollectionService: ObservableObject {
     private let saveKey = "collection"
 
-    func initialise() -> [PlantDetailModel] {
+    func getPlants() -> [PlantDetailModel] {
         var plants: [PlantDetailModel] = []
 
         if let data = UserDefaults.standard.data(forKey: self.saveKey) {
             if let decoded = try? JSONDecoder().decode([PlantDetailContainer].self, from: data) {
-                decoded.forEach { plant in
-                    plants.append(PlantDetailModel(plant))
+                plants = decoded.map { plant in
+                    PlantDetailModel(plant)
                 }
             }
         }
@@ -25,24 +25,16 @@ final class CollectionService: ObservableObject {
     }
 
     func add(_ plants: [PlantDetailModel], plant: PlantDetailModel) -> [PlantDetailModel] {
-        var plants = plants
-        plants.append(plant)
-
-        self.save(plants)
-        return plants
+        self.save(plants + [plant])
     }
 
     func remove(_ plants: [PlantDetailModel], plant: PlantDetailModel) -> [PlantDetailModel] {
-        var plants = plants
-        plants.removeAll { p in
-            p.id == plant.id
-        }
-
-        self.save(plants)
-        return plants
+        self.save(plants.filter({ p in
+            p.id != plant.id
+        }))
     }
 
-    private func save(_ plants: [PlantDetailModel]) {
+    private func save(_ plants: [PlantDetailModel]) -> [PlantDetailModel] {
         var plantContainers: [PlantDetailContainer] = []
 
         plants.forEach { plant in
@@ -52,5 +44,7 @@ final class CollectionService: ObservableObject {
         if let encoded = try? JSONEncoder().encode(plantContainers) {
             UserDefaults.standard.set(encoded, forKey: self.saveKey)
         }
+
+        return plants
     }
 }

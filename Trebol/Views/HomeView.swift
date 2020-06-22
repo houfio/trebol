@@ -13,6 +13,7 @@ struct HomeView: View {
                     Text("Loading...")
                     Spacer()
                 }
+                    .padding()
             } else {
                 VStack {
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -22,6 +23,12 @@ struct HomeView: View {
                                     .padding()
                             }
                         }
+                    }
+                    HStack {
+                        Text("Popular")
+                            .font(.headline)
+                            .padding(.horizontal)
+                        Spacer()
                     }
                     ScrollView {
                         Column(self.viewModel.plants) { item in

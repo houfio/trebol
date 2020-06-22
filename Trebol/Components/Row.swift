@@ -1,29 +1,22 @@
 import SwiftUI
 
 struct Row: View {
-    private let text: String
+    private let plant: PlantModel
     
-    init(_ text: String) {
-        self.text = text
+    init(_ plant: PlantModel) {
+        self.plant = plant
     }
     
     var body: some View {
-        HStack {
-            Text(self.text)
-            Spacer()
-            Image(systemName: "chevron.right")
+        NavigationLink(destination: DetailView(DetailViewModel(plant: self.plant))) {
+            Text(self.plant.name)
+                .padding()
         }
-            .padding()
-            .frame(maxWidth: .infinity, alignment: .topLeading)
-            .background(Color(.systemGray6))
-            .cornerRadius(8)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 6)
     }
 }
 
 struct Row_Previews: PreviewProvider {
     static var previews: some View {
-        Row("Test plant")
+        Row(PlantModel(PlantContainer(id: 0, scientificName: "Row")))
     }
 }

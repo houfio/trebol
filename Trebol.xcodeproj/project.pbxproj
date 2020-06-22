@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A21F178AC24BC5B31B0480C /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F199799163FDD7E5AC09 /* DetailViewModel.swift */; };
 		1A21F17EE85318337A4E1146 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FFC2E43F91D4DB6C2C10 /* Card.swift */; };
 		1A21F648CE6CA22CBA85C238 /* PlantDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F8B15D9104755F2BAF9E /* PlantDetailModel.swift */; };
+		1A21FCBA4260AD946332D4B3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F615D1FFC52108D1776A /* DetailView.swift */; };
 		3B24E49A24A0FA58005E9C90 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24E49924A0FA58005E9C90 /* Row.swift */; };
 		3B24E4A124A13384005E9C90 /* EffectButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B24E4A024A13384005E9C90 /* EffectButtonStyle.swift */; };
 		3B9884B124A0BB7A00674218 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9884B024A0BB7A00674218 /* SmallCard.swift */; };
@@ -31,11 +33,12 @@
 		D720A828249FBF5900217A77 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D720A827249FBF5900217A77 /* ActivityIndicator.swift */; };
 		D720A82A249FC1A200217A77 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D720A829249FC1A200217A77 /* HomeView.swift */; };
 		D720A82C24A0013500217A77 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D720A82B24A0013500217A77 /* HomeViewModel.swift */; };
-		D720A82F24A0320800217A77 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = D720A82E24A0320800217A77 /* URLImage */; };
 		D76231E924A0F071008CAF74 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76231E824A0F071008CAF74 /* Column.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A21F199799163FDD7E5AC09 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		1A21F615D1FFC52108D1776A /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1A21F8B15D9104755F2BAF9E /* PlantDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailModel.swift; sourceTree = "<group>"; };
 		1A21FFC2E43F91D4DB6C2C10 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3B24E49924A0FA58005E9C90 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
@@ -70,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D720A82F24A0320800217A77 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,7 @@
 				D720897A249E407A0060030A /* SearchView.swift */,
 				D720A829249FC1A200217A77 /* HomeView.swift */,
 				3B9884B424A0D4B000674218 /* CollectionView.swift */,
+				1A21F615D1FFC52108D1776A /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				D720A822249FAFBC00217A77 /* SearchViewModel.swift */,
 				D720A82B24A0013500217A77 /* HomeViewModel.swift */,
 				3B9884B624A0ED0300674218 /* CollectionViewModel.swift */,
+				1A21F199799163FDD7E5AC09 /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -207,7 +211,7 @@
 			);
 			name = Trebol;
 			packageProductDependencies = (
-				D720A82E24A0320800217A77 /* URLImage */,
+				D720A82E24A0320800217A77,
 			);
 			productName = Trebol;
 			productReference = D720895D249E38120060030A /* Trebol.app */;
@@ -238,7 +242,7 @@
 			);
 			mainGroup = D7208954249E38120060030A;
 			packageReferences = (
-				D720A82D24A0320800217A77 /* XCRemoteSwiftPackageReference "url-image" */,
+				D720A82D24A0320800217A77,
 			);
 			productRefGroup = D720895E249E38120060030A /* Products */;
 			projectDirPath = "";
@@ -289,6 +293,8 @@
 				1A21F648CE6CA22CBA85C238 /* PlantDetailModel.swift in Sources */,
 				3B24E49A24A0FA58005E9C90 /* Row.swift in Sources */,
 				1A21F17EE85318337A4E1146 /* Card.swift in Sources */,
+				1A21FCBA4260AD946332D4B3 /* DetailView.swift in Sources */,
+				1A21F178AC24BC5B31B0480C /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +492,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D720A82D24A0320800217A77 /* XCRemoteSwiftPackageReference "url-image" */ = {
+		D720A82D24A0320800217A77 = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
 			requirement = {
@@ -497,9 +503,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D720A82E24A0320800217A77 /* URLImage */ = {
+		D720A82E24A0320800217A77 = {
 			isa = XCSwiftPackageProductDependency;
-			package = D720A82D24A0320800217A77 /* XCRemoteSwiftPackageReference "url-image" */;
+			package = D720A82D24A0320800217A77;
 			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */

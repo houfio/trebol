@@ -7,7 +7,7 @@ class CollectionViewModel: ObservableObject {
     @Published var plants = [PlantDetailModel]()
 
     init() {
-        self.plants = self.collectionService.initialise()
+        self.plants = self.collectionService.getPlants()
     }
 
     func add(_ plant: PlantDetailModel) {

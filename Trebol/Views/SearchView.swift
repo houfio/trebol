@@ -11,7 +11,7 @@ struct SearchView: View {
         List {
             Section(header: SearchBar(text: self.$viewModel.search, placeholder: "Search plants", onSearch: self.viewModel.fetchPlants)) {
                 ForEach(self.viewModel.plants, id: \.self) { plant in
-                    Row(plant.name)
+                    Row(plant)
                 }
                 if self.viewModel.loading {
                     HStack {
