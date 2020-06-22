@@ -13,7 +13,7 @@ struct DetailView: View {
                 VStack {
                     Text(self.viewModel.plant!.name)
                     HStack {
-                        Text("Popular")
+                        Text("More like this")
                             .font(.headline)
                             .padding(.horizontal)
                         Spacer()
