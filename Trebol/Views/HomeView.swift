@@ -31,7 +31,7 @@ struct HomeView: View {
                     }
                     ScrollView {
                         Column(self.viewModel.plants) { item in
-                            SmallCard(PlantModel(PlantContainer(id: item.id, scientificName: item.name)))
+                            SmallCard(item)
                         }
                     }
                         .padding(.horizontal, 12)

@@ -7,18 +7,20 @@ class DetailViewModel: ObservableObject {
     @Published var plant: PlantDetailModel?
 
     var cancellable: AnyCancellable?
+    var model: PlantModel?
 
     init(plant: PlantModel? = nil, detail: PlantDetailModel? = nil) {
-        guard let data = detail else {
-            self.cancellable = self.trefleService.fetchPlant(plant!.id).sink(receiveCompletion: { completion in
-                print(completion)
+        self.model = plant
+        self.plant = detail
+    }
+
+    func fetchDetails() {
+        if (self.plant == nil && self.model != nil) {
+            self.cancellable = self.trefleService.fetchPlant(self.model!.id).sink(receiveCompletion: { completion in
+                print("detail \(completion)")
             }, receiveValue: { detailContainer in
                 self.plant = PlantDetailModel(detailContainer)
             })
-
-            return
         }
-
-        self.plant = data
     }
 }

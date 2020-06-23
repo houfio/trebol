@@ -18,9 +18,11 @@ class CollectionViewModel: ObservableObject {
         self.plants = self.collectionService.remove(self.plants, plant: plant)
     }
 
+    func toggle(_ plant: PlantDetailModel) {
+        self.contains(plant) ? self.remove(plant) : self.add(plant)
+    }
+
     func contains(_ plant: PlantDetailModel) -> Bool {
         self.collectionService.contains(self.plants, id: plant.id)
     }
 }
-
-

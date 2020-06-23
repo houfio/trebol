@@ -2,9 +2,11 @@ import SwiftUI
 
 struct DetailView: View {
     @ObservedObject private var viewModel: DetailViewModel
+    @ObservedObject private var collectionViewModel: CollectionViewModel
 
-    init(_ viewModel: DetailViewModel) {
+    init(_ viewModel: DetailViewModel, collectionViewModel: CollectionViewModel) {
         self.viewModel = viewModel
+        self.collectionViewModel = collectionViewModel
     }
 
     var body: some View {
@@ -16,11 +18,23 @@ struct DetailView: View {
                             HStack {
                                 ForEach(self.viewModel.plant?.images[0..<10] ?? [], id: \.self) { image in
                                     PlantImage(image)
-                                        .padding()
+                                        .padding(4)
                                 }
                             }
+                                .padding(.horizontal, 8)
                         }
                     }
+                    HStack {
+                        Text("Collection")
+                            .font(.headline)
+                        Spacer()
+                        Button(action: {
+                            self.collectionViewModel.toggle(self.viewModel.plant!)
+                        }) {
+                            Text(self.collectionViewModel.contains(self.viewModel.plant!) ? "Remove" : "Add")
+                        }
+                    }
+                        .padding(.horizontal)
                     if !(self.viewModel.plant?.species.isEmpty ?? true) {
                         HStack {
                             Text("Species")
@@ -28,13 +42,14 @@ struct DetailView: View {
                                 .padding(.horizontal)
                             Spacer()
                         }
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(self.viewModel.plant?.species ?? [], id: \.self) { plant in
                                     SmallCard(name: plant.name)
-                                        .padding()
+                                        .padding(4)
                                 }
                             }
+                                .padding(.horizontal, 8)
                         }
                     }
                 }
@@ -48,7 +63,10 @@ struct DetailView: View {
                     .padding()
             }
         }
-        .navigationBarTitle(self.viewModel.plant?.name ?? "")
+            .navigationBarTitle(self.viewModel.plant?.name ?? "")
+            .onAppear {
+                self.viewModel.fetchDetails()
+            }
     }
 }
 
@@ -62,7 +80,8 @@ struct DetailView_Previews: PreviewProvider {
                         scientificName: "Scientific name"
                     )
                 )
-            )
+            ),
+            collectionViewModel: CollectionViewModel()
         )
     }
 }

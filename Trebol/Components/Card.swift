@@ -2,6 +2,7 @@ import SwiftUI
 import URLImage
 
 struct Card: View {
+    @EnvironmentObject private var collectionViewModel: CollectionViewModel
     private let plant: PlantDetailModel
 
     init(_ plant: PlantDetailModel) {
@@ -9,7 +10,7 @@ struct Card: View {
     }
 
     var body: some View {
-        NavigationLink(destination: DetailView(DetailViewModel(detail: self.plant))) {
+        NavigationLink(destination: DetailView(DetailViewModel(detail: self.plant), collectionViewModel: self.collectionViewModel)) {
             VStack(alignment: .center) {
                 URLImage(URL(string: self.plant.image)!) { proxy in
                     proxy.image

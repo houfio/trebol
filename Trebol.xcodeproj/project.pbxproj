@@ -17,7 +17,6 @@
 		3B9884B324A0D30100674218 /* CollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9884B224A0D30100674218 /* CollectionService.swift */; };
 		3B9884B524A0D4B000674218 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9884B424A0D4B000674218 /* CollectionView.swift */; };
 		3B9884B724A0ED0300674218 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9884B624A0ED0300674218 /* CollectionViewModel.swift */; };
-		3BAE669A24A157AE00F63F58 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = D720A82E24A0320800217A77 /* URLImage */; };
 		3BAE669C24A15A2500F63F58 /* PlantImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE669B24A15A2500F63F58 /* PlantImage.swift */; };
 		D7208961249E38120060030A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7208960249E38120060030A /* AppDelegate.swift */; };
 		D7208963249E38120060030A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7208962249E38120060030A /* SceneDelegate.swift */; };
@@ -76,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BAE669A24A157AE00F63F58 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +214,7 @@
 			);
 			name = Trebol;
 			packageProductDependencies = (
-				D720A82E24A0320800217A77 /* URLImage */,
+				D720A82E24A0320800217A77,
 			);
 			productName = Trebol;
 			productReference = D720895D249E38120060030A /* Trebol.app */;
@@ -247,7 +245,7 @@
 			);
 			mainGroup = D7208954249E38120060030A;
 			packageReferences = (
-				D720A82D24A0320800217A77 /* XCRemoteSwiftPackageReference "url-image" */,
+				D720A82D24A0320800217A77,
 			);
 			productRefGroup = D720895E249E38120060030A /* Products */;
 			projectDirPath = "";
@@ -498,7 +496,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D720A82D24A0320800217A77 /* XCRemoteSwiftPackageReference "url-image" */ = {
+		D720A82D24A0320800217A77 = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
 			requirement = {
@@ -509,9 +507,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D720A82E24A0320800217A77 /* URLImage */ = {
+		D720A82E24A0320800217A77 = {
 			isa = XCSwiftPackageProductDependency;
-			package = D720A82D24A0320800217A77 /* XCRemoteSwiftPackageReference "url-image" */;
+			package = D720A82D24A0320800217A77;
 			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */

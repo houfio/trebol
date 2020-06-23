@@ -8,14 +8,14 @@ class HomeViewModel: ObservableObject {
     @Published var plants = [PlantDetailModel]()
 
     var loading: Bool {
-        self.plants.count != self.plantIds.count
+        self.plants.count <= 3
     }
     var cancellable: [AnyCancellable]?
 
     init() {
         self.cancellable = self.plantIds.map { id in
             self.trefleService.fetchPlant(id).sink(receiveCompletion: { completion in
-                print(completion)
+                print("home \(completion)")
             }, receiveValue: { detailContainer in
                 self.plants.append(PlantDetailModel(detailContainer))
             })

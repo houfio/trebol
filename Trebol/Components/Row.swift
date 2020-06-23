@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct Row: View {
+    @EnvironmentObject private var collectionViewModel: CollectionViewModel
     private let plant: PlantModel
 
     init(_ plant: PlantModel) {
@@ -8,7 +9,7 @@ struct Row: View {
     }
 
     var body: some View {
-        NavigationLink(destination: DetailView(DetailViewModel(plant: self.plant))) {
+        NavigationLink(destination: DetailView(DetailViewModel(plant: self.plant), collectionViewModel: self.collectionViewModel)) {
             HStack {
                 Text(self.plant.name)
                 Spacer()

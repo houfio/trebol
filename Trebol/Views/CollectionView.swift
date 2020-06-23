@@ -13,7 +13,7 @@ struct CollectionView: View {
             } else {
                 ScrollView {
                     Column(self.collectionViewModel.plants) { item in
-                        SmallCard(PlantModel(PlantContainer(id: item.id, scientificName: item.name)))
+                        SmallCard(item)
                     }
                 }
                     .padding(.horizontal, 12)
