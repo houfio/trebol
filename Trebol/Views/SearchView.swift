@@ -12,8 +12,8 @@ struct SearchView: View {
             VStack {
                 GeometryReader { g in
                     ZStack {
-                        Rectangle()
-                            .foregroundColor(Color(.systemBackground))
+                        Blur()
+                            .opacity(Double(88 - g.frame(in: .global).minY) / 52 + 1)
                         SearchBar(text: self.$viewModel.search, placeholder: "Search plants", onSearch: self.viewModel.fetchPlants)
                     }
                         .offset(x: 0, y: g.frame(in: .global).minY < 88 ? -g.frame(in: .global).minY + 88 : 0)

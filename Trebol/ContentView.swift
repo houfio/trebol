@@ -5,8 +5,6 @@ struct ContentView: View {
     private var collectionViewModel = CollectionViewModel()
 
     init() {
-        UINavigationBar.appearance().backgroundColor = .systemBackground
-        UINavigationBar.appearance().barTintColor = .systemBackground
         UINavigationBar.appearance().shadowImage = UIImage()
     }
 
