@@ -19,7 +19,7 @@ struct DetailView: View {
                     if !(self.viewModel.plant?.images.isEmpty ?? true) {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(self.viewModel.plant?.images[0..<10] ?? [], id: \.self) { image in
+                                ForEach(self.viewModel.plant?.images ?? [], id: \.self) { image in
                                     PlantImage(image)
                                         .padding(4)
                                 }
