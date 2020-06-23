@@ -29,13 +29,12 @@ struct HomeView: View {
                             .padding(.horizontal)
                         Spacer()
                     }
-                    ScrollView {
+                    VStack {
                         Column(self.viewModel.plants) { item in
                             SmallCard(item)
                         }
                     }
                         .padding(.horizontal, 12)
-                        .padding(.bottom, 10)
                 }
             }
         }
