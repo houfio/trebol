@@ -3,6 +3,9 @@ import SwiftUI
 struct DetailView: View {
     @ObservedObject private var viewModel: DetailViewModel
     @ObservedObject private var collectionViewModel: CollectionViewModel
+    private var specifications: SpecificationsContainer? {
+        self.viewModel.plant?.specifications
+    }
 
     init(_ viewModel: DetailViewModel, collectionViewModel: CollectionViewModel) {
         self.viewModel = viewModel
@@ -35,6 +38,20 @@ struct DetailView: View {
                         }
                     }
                         .padding(.horizontal)
+                    VStack {
+                        Specification("Toxicity", value: self.specifications?.toxicity)
+                        Specification("Shape & orientation", value: self.specifications?.shapeAndOrientation)
+                        Specification("Nitrogen fixation", value: self.specifications?.nitrogenFixation)
+                        Specification("Lifespan", value: self.specifications?.lifespan)
+                        Specification("Leaf retention", value: self.specifications?.leafRetention)
+                        Specification("Growth rate", value: self.specifications?.growthRate)
+                        Specification("Growth period", value: self.specifications?.growthPeriod)
+                        Specification("Growth habit", value: self.specifications?.growthHabit)
+                        Specification("Growth form", value: self.specifications?.growthForm)
+                        Specification("Fire resistance", value: self.specifications?.fireResistance, divider: false)
+                    }
+                        .padding(.horizontal)
+                        .padding(.vertical, 32)
                     if !(self.viewModel.plant?.species.isEmpty ?? true) {
                         HStack {
                             Text("Species")

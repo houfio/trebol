@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A21F03D8EEAA63835E178E4 /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F9538321994E67B0CB0D /* Specification.swift */; };
 		1A21F178AC24BC5B31B0480C /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21F199799163FDD7E5AC09 /* DetailViewModel.swift */; };
 		1A21F17EE85318337A4E1146 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FFC2E43F91D4DB6C2C10 /* Card.swift */; };
 		1A21F4AA42D91C1630DB547E /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A21FEAF0FD6963479C24B4A /* Row.swift */; };
@@ -43,6 +44,7 @@
 		1A21F615D1FFC52108D1776A /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1A21F757E55D630ED14EC3F0 /* Blur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 		1A21F8B15D9104755F2BAF9E /* PlantDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailModel.swift; sourceTree = "<group>"; };
+		1A21F9538321994E67B0CB0D /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
 		1A21FEAF0FD6963479C24B4A /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		1A21FFC2E43F91D4DB6C2C10 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3B24E4A024A13384005E9C90 /* EffectButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectButtonStyle.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				1A21FEAF0FD6963479C24B4A /* Row.swift */,
 				3BAE669B24A15A2500F63F58 /* PlantImage.swift */,
 				1A21F757E55D630ED14EC3F0 /* Blur.swift */,
+				1A21F9538321994E67B0CB0D /* Specification.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				1A21F178AC24BC5B31B0480C /* DetailViewModel.swift in Sources */,
 				1A21F4AA42D91C1630DB547E /* Row.swift in Sources */,
 				1A21FED10F8DC1E2142902C3 /* Blur.swift in Sources */,
+				1A21F03D8EEAA63835E178E4 /* Specification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

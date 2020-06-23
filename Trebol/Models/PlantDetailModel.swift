@@ -27,6 +27,10 @@ struct PlantDetailModel: Hashable {
         }
     }
 
+    var specifications: SpecificationsContainer {
+        self.plant.mainSpecies.specifications
+    }
+
     var raw: PlantDetailContainer {
         self.plant
     }
