@@ -35,6 +35,6 @@ struct SmallCard: View {
 
 struct SmallCard_Previews: PreviewProvider {
     static var previews: some View {
-        SmallCard(PlantDetailModel(PlantDetailContainer(id: 142735, scientificName: "Hibiscus moscheutos", images: [], subSpecies: [])))
+        SmallCard(PlantDetailModel(PlantDetailContainer(id: 142735, scientificName: "Hibiscus moscheutos", mainSpecies: SpeciesContainer(specifications: SpecificationsContainer(toxicity: "", shapeAndOrientation: "", regrowthRate: "", nitrogenFixation: "", lifespan: "", leafRetention: true, growthRate: "", growthPeriod: "", growthHabit: "", growthForm: "", fireResistance: true)), images: [], subSpecies: [])))
     }
 }

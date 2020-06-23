@@ -27,6 +27,10 @@ struct PlantDetailModel: Hashable {
         }
     }
 
+    var raw: PlantDetailContainer {
+        self.plant
+    }
+
     init(_ plant: PlantDetailContainer) {
         self.plant = plant;
     }
